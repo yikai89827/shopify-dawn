@@ -9,54 +9,9 @@
       "default": "Harmony & Protection Formation"
     },
     {
-      "type": "header",
-      "content": "左侧葫芦设置"
-    },
-    {
       "type": "image_picker",
-      "id": "left_gourd_image",
-      "label": "左侧葫芦图片"
-    },
-    {
-      "type": "richtext",
-      "id": "left_gourd_desc",
-      "label": "左侧葫芦描述",
-      "default": "<p>蓝绿色天然纹理葫芦，象征自然和谐与平衡，藤蔓上的珠子代表能量连接。</p>"
-    },
-    {
-      "type": "header",
-      "content": "右侧葫芦设置"
-    },
-    {
-      "type": "image_picker",
-      "id": "right_gourd_image",
-      "label": "右侧葫芦图片"
-    },
-    {
-      "type": "richtext",
-      "id": "right_gourd_desc",
-      "label": "右侧葫芦描述",
-      "default": "<p>金色光滑葫芦，象征财富与保护，金属枝条代表能量流动与扩展。</p>"
-    },
-    {
-      "type": "header",
-      "content": "整体效果说明"
-    },
-    {
-      "type": "richtext",
-      "id": "effect_desc",
-      "label": "效果描述",
-      "default": "<p>将这对葫芦放置在入口处或客厅角落，可以创造和谐的能量场，同时提供保护作用。左侧葫芦吸收负能量，右侧葫芦释放正能量。</p>"
-    },
-    {
-      "type": "header",
-      "content": "摆放建议"
-    },
-    {
-      "type": "richtext",
-      "id": "placement_desc",
-      "label": "摆放说明",
-      "default": "<p>1. 将葫芦放置在木质底座上效果最佳<br>2. 保持葫芦清洁，定期用软布擦拭<br>3. 每月一次在月光下净化能量</p>"
+      "id": "bg_image",
+      "label": "背景图片"
     }
   ],
   "presets": [
@@ -68,139 +23,57 @@
 }
 {% endschema %}
 
-<div class="fengshui-harmony-section">
+<div
+  class="fengshui-harmony-section"
+  {% if section.settings.bg_image != blank %}
+    style="background-image: url('{{ section.settings.bg_image | img_url: '2000x' }}');"
+  {% endif %}
+>
   <div class="page-width">
     <h2 class="harmony-title">{{ section.settings.title }}</h2>
-
-    <div class="harmony-container">
-      <div class="gourd-pair">
-        <div class="left-gourd">
-          {% if section.settings.left_gourd_image != blank %}
-            <img
-              src="{{ section.settings.left_gourd_image | img_url: '400x' }}"
-              alt="和谐葫芦"
-              width="400"
-              height="400"
-              loading="lazy"
-            >
-          {% endif %}
-          <div class="gourd-desc">
-            {{ section.settings.left_gourd_desc }}
-          </div>
-        </div>
-
-        <div class="right-gourd">
-          {% if section.settings.right_gourd_image != blank %}
-            <img
-              src="{{ section.settings.right_gourd_image | img_url: '400x' }}"
-              alt="保护葫芦"
-              width="400"
-              height="400"
-              loading="lazy"
-            >
-          {% endif %}
-          <div class="gourd-desc">
-            {{ section.settings.right_gourd_desc }}
-          </div>
-        </div>
-      </div>
-
-      <div class="effect-section">
-        <h3>整体效果</h3>
-        <div class="effect-desc">
-          {{ section.settings.effect_desc }}
-        </div>
-      </div>
-
-      <div class="placement-section">
-        <h3>摆放建议</h3>
-        <div class="placement-desc">
-          {{ section.settings.placement_desc }}
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 
 <style>
   .fengshui-harmony-section {
-    padding: 60px 0;
-    background: #f9f5f0;
-  }
-
-  .harmony-title {
-    text-align: center;
-    font-size: 2.2rem;
-    color: #5c3a21;
-    margin-bottom: 50px;
-  }
-
-  .gourd-pair {
+    padding: 100px 0 60px;
+    background-size: cover;
+    background-position: center;
+    min-height: 400px;
     display: flex;
+    align-items: flex-start;
     justify-content: center;
-    gap: 60px;
-    margin-bottom: 40px;
+    position: relative;
   }
-
-  .left-gourd,
-  .right-gourd {
-    flex: 1;
-    max-width: 400px;
-    text-align: center;
-  }
-
-  .gourd-pair img {
+  .fengshui-harmony-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    height: 100%;
+    background-color: rgba(249, 245, 240, 0.85);
+    z-index: 0;
   }
-
-  .gourd-desc {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #555;
-  }
-
-  .effect-section,
-  .placement-section {
-    max-width: 800px;
-    margin: 0 auto 30px;
-    padding: 30px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  }
-
-  .effect-section h3,
-  .placement-section h3 {
-    font-size: 1.5rem;
-    color: #5c3a21;
-    margin-bottom: 20px;
+  .fengshui-harmony-section .page-width {
+    position: relative;
+    z-index: 1;
     text-align: center;
   }
-
-  .effect-desc,
-  .placement-desc {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #555;
+  .harmony-title {
+    font-size: 3rem;
+    color: #5c3a21;
+    margin-top: 80px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
   }
-
   @media (max-width: 768px) {
-    .gourd-pair {
-      flex-direction: column;
-      gap: 30px;
-    }
-
-    .left-gourd,
-    .right-gourd {
-      max-width: 100%;
-    }
-
     .harmony-title {
-      font-size: 1.8rem;
+      font-size: 2.2rem;
+      margin-top: 60px;
+    }
+    .fengshui-harmony-section {
+      padding: 80px 0 40px;
+      min-height: 300px;
     }
   }
 </style>
