@@ -59,6 +59,7 @@
       "name": "事业财富风水布局",
       "settings": {
         "title": "Fortune & Career Flow Formation",
+        "center_image": "shopify://shop_images/8.png",
         "center_desc": "<p>将\"Compass Sand Tray\"放在桌子或架子的中心位置，作为强大的基础，稳定意图并调和周围的能量。</p>",
         "nw_desc": "<p>在沙盘的西北部分放置\"Brass Abacus\"，以催化职业发展、增强资源管理技巧和促进宝贵的联系。</p>",
         "se_desc": "<p>在沙盘的东南部分放置\"Golden Abundance Vase\"，并填充干净的水或米，以吸引和培养财富能量。</p>",
@@ -102,6 +103,7 @@
       "name": "天轨八卦风水布局",
       "settings": {
         "title": "Celestial Orbit Formation",
+        "bg_image": "shopify://shop_images/bj.jpg",
         "tray_title": "八卦沙盘",
         "tray_desc": "<p>将八卦沙盘分为阴(黑色磁砂)和阳(红色朱砂)两个区域作为基础。</p>",
         "east_desc": "<p>铜制青龙搭配苔藓玛瑙和竹子，激活春季生长能量。</p>",
