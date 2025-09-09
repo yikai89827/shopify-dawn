@@ -164,11 +164,8 @@
       "fengshui-harmony-section": {
         "type": "fengshui-harmony-section",
         "settings": {
-          "title": "Harmony & Protection Formation",
-          "left_gourd_desc": "<p>蓝绿色天然纹理葫芦，象征自然和谐与平衡，藤蔓上的珠子代表能量连接。</p>",
-          "right_gourd_desc": "<p>金色光滑葫芦，象征财富与保护，金属枝条代表能量流动与扩展。</p>",
-          "effect_desc": "<p>将这对葫芦放置在入口处或客厅角落，可以创造和谐的能量场，同时提供保护作用。左侧葫芦吸收负能量，右侧葫芦释放正能量。</p>",
-          "placement_desc": "<p>1. 将葫芦放置在木质底座上效果最佳<br>2. 保持葫芦清洁，定期用软布擦拭<br>3. 每月一次在月光下净化能量</p>"
+          "title": "Harmony  Guardian Vortex",
+          "bg_image": "shopify://shop_images/9.png"
         }
       }
     },
