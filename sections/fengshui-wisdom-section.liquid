@@ -1,0 +1,227 @@
+{% schema %}
+{
+  "name": "风水智慧区块",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title_line1",
+      "label": "标题行1",
+      "default": "Where Walls Whisper Wisdom"
+    },
+    {
+      "type": "text",
+      "id": "title_line2",
+      "label": "标题行2",
+      "default": "The Measurable Poetry of"
+    },
+    {
+      "type": "text",
+      "id": "title_line3",
+      "label": "标题行3",
+      "default": "Feng Shui Science"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "描述内容",
+      "default": "<p>Discover the ancient wisdom of Feng Shui through our carefully curated collection of golden ornaments.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "main_image",
+      "label": "主展示图片"
+    },
+    {
+      "type": "image_picker",
+      "id": "hulu_image",
+      "label": "葫芦装饰图片"
+    },
+    {
+      "type": "image_picker",
+      "id": "yuanbao_image",
+      "label": "元宝装饰图片"
+    },
+    {
+      "type": "image_picker",
+      "id": "lion_image",
+      "label": "石狮子图片"
+    }
+  ],
+  "presets": [
+    {
+      "name": "风水智慧区块",
+      "category": "自定义区块"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="fengshui-wisdom-section">
+  <div class="page-width">
+    <div class="wisdom-header">
+      <h2 class="wisdom-line1">{{ section.settings.title_line1 }}</h2>
+      <h3 class="wisdom-line2">{{ section.settings.title_line2 }}</h3>
+      <h2 class="wisdom-line3">{{ section.settings.title_line3 }}</h2>
+    </div>
+
+    <div class="wisdom-description">
+      {{ section.settings.description }}
+    </div>
+
+    <div class="wisdom-display">
+      {% if section.settings.main_image != blank %}
+        <div class="main-display">
+          <img
+            src="{{ section.settings.main_image | img_url: '1200x' }}"
+            alt="风水智慧展示"
+            width="1200"
+            height="800"
+            loading="lazy"
+          >
+        </div>
+      {% endif %}
+
+      <div class="item-grid">
+        {% if section.settings.hulu_image != blank %}
+          <div class="wisdom-item">
+            <img
+              src="{{ section.settings.hulu_image | img_url: '400x' }}"
+              alt="葫芦风水装饰"
+              width="400"
+              height="400"
+              loading="lazy"
+            >
+            <p class="item-label">葫芦 - 福禄双全</p>
+          </div>
+        {% endif %}
+
+        {% if section.settings.yuanbao_image != blank %}
+          <div class="wisdom-item">
+            <img
+              src="{{ section.settings.yuanbao_image | img_url: '400x' }}"
+              alt="元宝风水装饰"
+              width="400"
+              height="400"
+              loading="lazy"
+            >
+            <p class="item-label">金元宝 - 招财进宝</p>
+          </div>
+        {% endif %}
+
+        {% if section.settings.lion_image != blank %}
+          <div class="wisdom-item">
+            <img
+              src="{{ section.settings.lion_image | img_url: '400x' }}"
+              alt="石狮子风水装饰"
+              width="400"
+              height="400"
+              loading="lazy"
+            >
+            <p class="item-label">石狮子 - 镇宅辟邪</p>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .fengshui-wisdom-section {
+    padding: 60px 0;
+    background: #f9f5f0;
+  }
+
+  .wisdom-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .wisdom-line1 {
+    font-size: 2rem;
+    color: #5c3a21;
+    margin-bottom: 10px;
+    font-weight: 400;
+  }
+
+  .wisdom-line2 {
+    font-size: 1.5rem;
+    color: #8b4513;
+    margin-bottom: 5px;
+    font-weight: 300;
+  }
+
+  .wisdom-line3 {
+    font-size: 2.2rem;
+    color: #5c3a21;
+    font-weight: 500;
+  }
+
+  .wisdom-description {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+  }
+
+  .main-display {
+    margin-bottom: 40px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .main-display img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .item-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .wisdom-item {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .wisdom-item:hover {
+    transform: translateY(-5px);
+  }
+
+  .wisdom-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 15px;
+  }
+
+  .item-label {
+    font-size: 1rem;
+    color: #8b4513;
+    margin: 0;
+    font-family: 'KaiTi', serif;
+  }
+
+  @media (max-width: 768px) {
+    .wisdom-line1 {
+      font-size: 1.8rem;
+    }
+    .wisdom-line2 {
+      font-size: 1.3rem;
+    }
+    .wisdom-line3 {
+      font-size: 2rem;
+    }
+  }
+</style>
