@@ -48,11 +48,6 @@
 
 <div class="fengshui-section">
   <div class="page-width">
-    <div class="fengshui-hero">
-      <h1 class="fengshui-title">{{ section.settings.title }}</h1>
-      <p class="fengshui-subtitle">{{ section.settings.subtitle }}</p>
-    </div>
-
     <div class="fengshui-container">
       <div class="fengshui-display">
         {% if section.settings.image != blank %}
@@ -61,12 +56,16 @@
             alt="风水装饰品"
             class="fengshui-image"
             width="800"
-            height="800"
+            height="auto"
             loading="lazy"
           >
         {% endif %}
       </div>
       <div class="fengshui-content">
+        <div class="fengshui-hero">
+          <h1 class="fengshui-title">{{ section.settings.title }}</h1>
+          <p class="fengshui-subtitle">{{ section.settings.subtitle }}</p>
+        </div>
         <div class="fengshui-description">
           {{ section.settings.description }}
         </div>
