@@ -179,6 +179,8 @@
         "type": "fengshui-about-section",
         "settings": {
           "title": "Piece together Your  perfect energy",
+          "button_text": "Unlock Custom Feng Shui Solution",
+          "button_link": "",
           "bg_image": "shopify://shop_images/bj.jpg",
           "bg_color": "#f9f5f0",
           "content_image": "shopify://shop_images/10.jpg",
