@@ -7,38 +7,40 @@
 {% enddoc %}
 <div class="card-list">
   {% for product in collections.all.products limit: limit offset: offset %}
-    <div class="product-card" data-product-id="{{ product.id }}">
-      <a
-        href="{{ product.url }}"
-        class="product-card__link"
-      >
-        <div class="product-card__image">
-          <div class="product-card__image-inner">
-            {{
-              product.featured_image
-              | image_url: width: 300, height: 300, crop: 'center'
-              | image_tag: loading: 'lazy', class: 'product-card__img'
-            }}
-            {% if tag contains 'New' %}
-              <span class="product-tag product-tag--new">NEW</span>
-            {% elsif tag contains 'Best Sellers' %}
-              <span class="product-tag product-tag--hot">HOT</span>
-            {% else %}
-              <span class="product-tag product-tag-normal">{{ tag }}</span>
-            {% endif %}
+    {% if product.tags contains tag %}
+      <div class="product-card" data-product-id="{{ product.id }}">
+        <a
+          href="{{ product.url }}"
+          class="product-card__link"
+        >
+          <div class="product-card__image">
+            <div class="product-card__image-inner">
+              {{
+                product.featured_image
+                | image_url: width: 300, height: 300, crop: 'center'
+                | image_tag: loading: 'lazy', class: 'product-card__img'
+              }}
+              {% if tag contains 'New' %}
+                <span class="product-tag product-tag--new">NEW</span>
+              {% elsif tag contains 'Best Sellers' %}
+                <span class="product-tag product-tag--hot">HOT</span>
+              {% else %}
+                <span class="product-tag product-tag-normal">{{ tag }}</span>
+              {% endif %}
+            </div>
           </div>
-        </div>
-        <div class="product-card__info">
-          <h3 class="product-card__title">{{ product.title }}</h3>
-          <div class="product-card__description">
-            {{ product.description | strip_html | truncate: 100 }}
+          <div class="product-card__info">
+            <h3 class="product-card__title">{{ product.title }}</h3>
+            <div class="product-card__description">
+              {{ product.description | strip_html | truncate: 100 }}
+            </div>
+            <div class="product-card__price">
+              {{ product.price | money }}
+            </div>
           </div>
-          <div class="product-card__price">
-            {{ product.price | money }}
-          </div>
-        </div>
-      </a>
-    </div>
+        </a>
+      </div>
+    {% endif %}
   {% endfor %}
 </div>
 
@@ -89,8 +91,9 @@
   }
 
   .product-tag--normal {
-    background-color: #ececcc;
+    background-color: #2196f3;
   }
+
   .product-card__image-inner {
     position: absolute;
     top: 0;
