@@ -30,10 +30,7 @@
 {% endschema %}
 
 <div class="fengshui-celestial-section">
-  {% if section.settings.bg_image != blank %}
-    <div class="bg-image" style="background-image: url('{{ section.settings.bg_image | img_url: '2000x' }}');"></div>
-  {% endif %}
-  <div class="page-width">
+  <div class="page-width" style="background-image: url('{{ section.settings.bg_image | img_url: '2000x' }}');">
     <h2 class="celestial-title">{{ section.settings.title }}</h2>
     <div class="celestial-content">
       {{ section.settings.content }}
