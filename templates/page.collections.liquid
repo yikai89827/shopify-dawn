@@ -1,19 +1,21 @@
 {% layout 'theme' %}
 
-<div class="page-width" style="background-image: url('{{ '2.png' | asset_img_url: '2000x' }}')">
-  {% render 'component-customer-title', title: 'Golden Career Ascension Grid' %}
-  {% render 'component-customer-list', limit: 8 %}
-  {% render 'component-customer-title', title: 'Harmony Guardian Vortex' %}
-  {% render 'component-customer-list', limit: 8 %}
-  {% render 'component-customer-title', title: 'Lumina Scholar' %}
-  {% render 'component-customer-list', limit: 8 %}
-  {% render 'component-customer-title', title: 'Serenity & Love Cocoon' %}
-  {% render 'component-customer-list', limit: 8 %}
-  {% render 'component-customer-title', title: 'Celestial Orbit Series' %}
-  {% render 'component-customer-list', limit: 8 %}
-  {% render 'component-customer-title', title: 'Blossom Veil' %}
-  {% render 'component-customer-list', limit: 8 %}
-</div>
+{% comment %}
+  <div class="page-width" style="background-image: url('{{ '2.png' | asset_img_url: '2000x' }}')">
+    {% render 'component-customer-title', title: 'Golden Career Ascension Grid' %}
+    {% render 'component-customer-list', limit: 8 %}
+    {% render 'component-customer-title', title: 'Harmony Guardian Vortex' %}
+    {% render 'component-customer-list', limit: 8 %}
+    {% render 'component-customer-title', title: 'Lumina Scholar' %}
+    {% render 'component-customer-list', limit: 8 %}
+    {% render 'component-customer-title', title: 'Serenity & Love Cocoon' %}
+    {% render 'component-customer-list', limit: 8 %}
+    {% render 'component-customer-title', title: 'Celestial Orbit Series' %}
+    {% render 'component-customer-list', limit: 8 %}
+    {% render 'component-customer-title', title: 'Blossom Veil' %}
+    {% render 'component-customer-list', limit: 8 %}
+  </div>
+{% endcomment %}
 
 <style>
   .collection-card {
