@@ -133,6 +133,43 @@
         "settings": {
           "color_scheme": "scheme-1"
         }
+      },
+      "fengshui-career-section": {
+        "type": "fengshui-career-section",
+        "settings": {
+          "title": "Golden  Career  ascension  grid",
+          "bg_color": "#f9f5f0",
+          "content_image": "shopify://shop_images/8.png",
+          "content_text": "<p><strong>Center:</strong> <br/>Position the <span style=\"text-decoration:underline\"><em>Compass Sand Tray</em></span><span style=\"text-decoration:underline\"> </span>at the center of your desk or shelf. This acts as a powerful foundation, grounding your intentions and harmonizing the energies around you.</p><p><strong>Northwest (Career & Mentors): </strong>Carefully<br/>place the <span style=\"text-decoration:underline\"><em>BrassAbacus</em></span><em> </em>in the Northwest sector of the sand tray. This strategic positioning catalyzes career advancement, enhances resource management skills, and fosters invaluable<br/>connections.</p><p><strong>Southeast (Wealth):</strong><br/>Place the <span style=\"text-decoration:underline\"><em>Golden<br/>Abundance Vase</em></span> in the Southeast sector of the tray, filling it with clean water or rice. This attracts and cultivates an<br/>abundant flow of wealth energy.</p><p><strong>Core Wealth Activation:</strong><br/>Prominently display the <span style=\"text-decoration:underline\"><em>Gold Ingot(s)</em></span> in the central area of the sand tray.<br/>This powerful symbol actively manifests abundant wealth and firmly anchors<br/>prosperity within your harmonized space.</p><p><strong>Activation:</strong> Engage with your setup daily by gently moving the beads on the abacus and visualizing your financial gains and successes. Ensure the crystal vase remains clean and invigorated, amplifying its energy.</p><p><strong>Essence: </strong>The <span style=\"text-decoration:underline\"><em>Compass Sand Tray</em></span> harmonizes your environment, the<br/>Northwest Abacus drives you towards career success through insightful<br/>strategies, the Southeast Crystal Vase magnetizes wealth, and the central Gold<br/>Ingot embodies core abundance. Together, these elements create a compelling field of focused energy that empowers your journey towards prosperity and professional excellence.</p>"
+        }
+      },
+      "fengshui-celestial-section": {
+        "type": "fengshui-celestial-section",
+        "settings": {
+          "title": "Celestial Orbit Formation",
+          "tray_title": "八卦沙盘",
+          "tray_desc": "<p>将八卦沙盘分为阴(黑色磁砂)和阳(红色朱砂)两个区域作为基础。</p>",
+          "east_desc": "<p>铜制青龙搭配苔藓玛瑙和竹子，激活春季生长能量。</p>",
+          "south_desc": "<p>铜制凤凰放在红色紫晶盘上，配有石榴花，激发夏季活力。</p>",
+          "west_desc": "<p>面对门的铜制貔貅，踩在黄铁矿上，手持琥珀硬币，收获秋季财富。</p>",
+          "north_desc": "<p>携带雪黑曜石和月光水碗的铜制乌龟，锚定冬季智慧。</p>",
+          "se_desc": "<p>马达加斯加红宝石和柳枝，代表血液/生命能量。</p>",
+          "sw_desc": "<p>粉色水晶花瓶配莲花和金色沙子，象征爱与和谐。</p>",
+          "nw_desc": "<p>桃花熏香炉配稻穗花纹丝绸，关联事业/资源。</p>",
+          "ne_desc": "<p>青金石下方有山石和棉花\"雪\"，表示稳定/知识。</p>",
+          "center_desc": "<p>铜制文昌宝塔刺穿阴阳符号，刻有四季符号：龙(春)、凤(夏)、貔貅(秋)、龟(冬)。</p>",
+          "activation_desc": "<p>冬至/夏至和春秋分时旋转沙盘，夏季正午和冬季子时进行特别激活仪式。</p>"
+        }
+      },
+      "fengshui-harmony-section": {
+        "type": "fengshui-harmony-section",
+        "settings": {
+          "title": "Harmony & Protection Formation",
+          "left_gourd_desc": "<p>蓝绿色天然纹理葫芦，象征自然和谐与平衡，藤蔓上的珠子代表能量连接。</p>",
+          "right_gourd_desc": "<p>金色光滑葫芦，象征财富与保护，金属枝条代表能量流动与扩展。</p>",
+          "effect_desc": "<p>将这对葫芦放置在入口处或客厅角落，可以创造和谐的能量场，同时提供保护作用。左侧葫芦吸收负能量，右侧葫芦释放正能量。</p>",
+          "placement_desc": "<p>1. 将葫芦放置在木质底座上效果最佳<br>2. 保持葫芦清洁，定期用软布擦拭<br>3. 每月一次在月光下净化能量</p>"
+        }
       }
     },
     "content_for_index": [],
