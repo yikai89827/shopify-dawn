@@ -68,10 +68,20 @@
         "button_text": "Unlock Custom Feng Shui Solution",
         "button_link": ""
       }
+    },
+    "fengshui_science_section_HdtKjr": {
+      "type": "fengshui-science-section",
+      "name": "风水科学区块",
+      "settings": {
+        "title": "Why Billionaires Treat Feng Shui as Spatial Physics? (Lab-Validated)",
+        "description": "<p>Feng Shui as a form of environmental science creates measurable impact through interactions with architectural energy flows.</p>",
+        "main_image": "shopify://shop_images/2.png"
+      }
     }
   },
   "order": [
     "image_banner",
-    "fengshui_section_97zCz9"
+    "fengshui_section_97zCz9",
+    "fengshui_science_section_HdtKjr"
   ]
 }
