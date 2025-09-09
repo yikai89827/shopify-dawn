@@ -196,8 +196,10 @@
         "type": "fengshui-about-section-3",
         "settings": {
           "title": "Fortune & Career Flow Formation",
+          "bg_image": "shopify://shop_images/bj.jpg",
           "bg_color": "#f9f5f0",
-          "content_text": "<p>在这里添加事业财富风水布局的详细描述</p>"
+          "content_image": "shopify://shop_images/11.jpg",
+          "content_text": "<p><strong>Master<br/>Ma, </strong>authentic lineage holder of Dragon Tiger<br/>Mountain's Celestial Masters Taoism, dedicated 12 years to mastering Flying<br/>Star Feng Shui. In 2020, he decoded the energy flows of modern architecture,<br/>pioneering the <em>Building Energy Diagnostics Model</em>™. Directed geomantic solutions for 21<br/>municipal projects, including Qingdao Coastal Expressway and CBD developments,<br/>reducing delays by 70% and activating wealth sectors. Integrates satellite<br/>surveys with classical methods to harmonize spaces worldwide.</p>"
         }
       },
       "fengshui-about-section-4": {
