@@ -12,6 +12,12 @@
       "type": "image_picker",
       "id": "bg_image",
       "label": "背景图片"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "内容",
+      "default": "<p>在此添加和谐保护风水布局的详细说明</p>"
     }
   ],
   "presets": [
@@ -29,8 +35,11 @@
     style="background-image: url('{{ section.settings.bg_image | img_url: '2000x' }}');"
   {% endif %}
 >
-  <div class="page-width">
+  <div class="page-width harmony-container">
     <h2 class="harmony-title">{{ section.settings.title }}</h2>
+    <div class="harmony-content">
+      {{ section.settings.content }}
+    </div>
   </div>
 </div>
 
@@ -60,11 +69,27 @@
     z-index: 1;
     text-align: center;
   }
+  .harmony-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
   .harmony-title {
     font-size: 3rem;
-    color: #fff;
-    margin-top: 8px;
+    color: #5c3a21;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    margin: 0;
+  }
+  .harmony-content {
+    background-color: rgba(249, 245, 240, 0.9);
+    padding: 30px;
+    border-radius: 8px;
+  }
+  .harmony-content p {
+    margin: 0 0 15px 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #5c3a21;
   }
   @media (max-width: 768px) {
     .harmony-title {
