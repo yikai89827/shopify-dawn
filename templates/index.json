@@ -88,12 +88,34 @@
         "description": "<p>Discover the ancient wisdom of Feng Shui through our carefully curated collection of golden ornaments.</p>",
         "main_image": "shopify://shop_images/3.png"
       }
+    },
+    "fengshui_consult_section_UxUxGP": {
+      "type": "fengshui-consult-section",
+      "name": "风水咨询服务区块",
+      "settings": {
+        "title": "Your space resonates with energy",
+        "description": "<p>In the silent interplay between the bed and the<br/>beam, the desk and the doorway, lies a profound understanding of well- being<br/>unveiled through modern scientific inquiry. Here, we find ourselves at the<br/>crossroads where Chaucer’s sacred geometry intersects with quantum coherence,<br/>powerfully transforming moonlit philosophies into invigorating morning rituals.</p>",
+        "step1_icon": "shopify://shop_images/4.png",
+        "step1_title": "Take a 3-min Quiz",
+        "step1_desc": "Identify your key Feng Shui Challenges",
+        "step2_icon": "shopify://shop_images/5.png",
+        "step2_title": "Get Matched Solutions",
+        "step2_desc": "Discover products tailored to your quiz results",
+        "step3_icon": "shopify://shop_images/6.png",
+        "step3_title": "Book a 1-on-1 Consultation (Optional)",
+        "step3_desc": "For a personalized plan, schedule an appointment with our consultant",
+        "button_text": "Unlock Custom Feng Shui Solution",
+        "button_link": "",
+        "faq_text": "Or, Visit Our FAQ to Learn More",
+        "faq_link": ""
+      }
     }
   },
   "order": [
     "image_banner",
     "fengshui_section_97zCz9",
     "fengshui_science_section_HdtKjr",
-    "fengshui_wisdom_section_AMPhtV"
+    "fengshui_wisdom_section_AMPhtV",
+    "fengshui_consult_section_UxUxGP"
   ]
 }
