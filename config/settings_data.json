@@ -147,25 +147,16 @@
         "type": "fengshui-celestial-section",
         "settings": {
           "title": "Celestial Orbit Formation",
-          "tray_title": "八卦沙盘",
-          "tray_desc": "<p>将八卦沙盘分为阴(黑色磁砂)和阳(红色朱砂)两个区域作为基础。</p>",
-          "east_desc": "<p>铜制青龙搭配苔藓玛瑙和竹子，激活春季生长能量。</p>",
-          "south_desc": "<p>铜制凤凰放在红色紫晶盘上，配有石榴花，激发夏季活力。</p>",
-          "west_desc": "<p>面对门的铜制貔貅，踩在黄铁矿上，手持琥珀硬币，收获秋季财富。</p>",
-          "north_desc": "<p>携带雪黑曜石和月光水碗的铜制乌龟，锚定冬季智慧。</p>",
-          "se_desc": "<p>马达加斯加红宝石和柳枝，代表血液/生命能量。</p>",
-          "sw_desc": "<p>粉色水晶花瓶配莲花和金色沙子，象征爱与和谐。</p>",
-          "nw_desc": "<p>桃花熏香炉配稻穗花纹丝绸，关联事业/资源。</p>",
-          "ne_desc": "<p>青金石下方有山石和棉花\"雪\"，表示稳定/知识。</p>",
-          "center_desc": "<p>铜制文昌宝塔刺穿阴阳符号，刻有四季符号：龙(春)、凤(夏)、貔貅(秋)、龟(冬)。</p>",
-          "activation_desc": "<p>冬至/夏至和春秋分时旋转沙盘，夏季正午和冬季子时进行特别激活仪式。</p>"
+          "bg_image": "shopify://shop_images/bj.jpg",
+          "content": "<p>在此输入风水布局内容</p>"
         }
       },
       "fengshui-harmony-section": {
         "type": "fengshui-harmony-section",
         "settings": {
           "title": "Harmony  Guardian Vortex",
-          "bg_image": "shopify://shop_images/9.png"
+          "bg_image": "shopify://shop_images/9.png",
+          "content": "<p>在此添加和谐保护风水布局的详细说明</p>"
         }
       }
     },
