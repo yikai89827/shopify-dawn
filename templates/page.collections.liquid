@@ -1,0 +1,41 @@
+{% layout 'theme' %}
+
+<div class="page-width" style="background-image: url('{{ '2.png' | asset_img_url: '2000x' }}')">
+  {% render 'component-customer-title', title: 'Golden Career Ascension Grid' %}
+  {% render 'component-customer-list', limit: 8 %}
+  {% render 'component-customer-title', title: 'Harmony Guardian Vortex' %}
+  {% render 'component-customer-list', limit: 8 %}
+  {% render 'component-customer-title', title: 'Lumina Scholar' %}
+  {% render 'component-customer-list', limit: 8 %}
+  {% render 'component-customer-title', title: 'Serenity & Love Cocoon' %}
+  {% render 'component-customer-list', limit: 8 %}
+  {% render 'component-customer-title', title: 'Celestial Orbit Series' %}
+  {% render 'component-customer-list', limit: 8 %}
+  {% render 'component-customer-title', title: 'Blossom Veil' %}
+  {% render 'component-customer-list', limit: 8 %}
+</div>
+
+<style>
+  .collection-card {
+    margin-bottom: 30px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  .collection-card:hover {
+    transform: translateY(-5px);
+  }
+  .collection-card__image {
+    margin-bottom: 15px;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+  .collection-card__title {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    color: {{ settings.color_heading }};
+  }
+  .collection-card__count {
+    color: {{ settings.color_body_text | color_modify: 'alpha', 0.6 }};
+    font-size: 0.9em;
+  }
+</style>

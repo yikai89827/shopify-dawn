@@ -7,6 +7,17 @@
 {% enddoc %}
 <div class="card-list">
   {% for product in collections.all.products limit: limit offset: offset %}
+    {% comment %} {% assign showItem = product.tags.some(v=>v===tag) %} {% endcomment %}
+    {% comment %}
+      {{ product.tags | json }}
+      ["Accessories","BACKLESS TOP","Best Sellers","Bottoms","Coats","Customized","Dresses","HALTER NECK","HALTER TOP BLACK","New","Tops"]
+    {% endcomment %}
+    {% comment %}
+      {% if 1 %}
+      {% if type == 13 %}/pages/details?index={{forloop.index0}}{% else %}
+      {% endif %}
+      {% endif %}
+    {% endcomment %}
     <div class="product-card" data-product-id="{{ product.id }}">
       <a
         href="{{ product.url }}"
@@ -19,12 +30,11 @@
               | image_url: width: 300, height: 300, crop: 'center'
               | image_tag: loading: 'lazy', class: 'product-card__img'
             }}
-            {% if tag contains 'New' %}
+            {% if tag contains 'new' %}
               <span class="product-tag product-tag--new">NEW</span>
-            {% elsif tag contains 'Best Sellers' %}
+            {% endif %}
+            {% if tag contains 'Best Sellers' %}
               <span class="product-tag product-tag--hot">HOT</span>
-            {% else %}
-              <span class="product-tag product-tag-normal">{{ tag }}</span>
             {% endif %}
           </div>
         </div>
@@ -86,10 +96,6 @@
 
   .product-tag--hot {
     background-color: #f44336;
-  }
-
-  .product-tag--normal {
-    background-color: #ececcc;
   }
   .product-card__image-inner {
     position: absolute;

@@ -1,0 +1,240 @@
+{% layout 'theme' %}
+
+<div class="page-width" style="background-image: url('{{ '2.png' | asset_img_url: '2000x' }}')">
+  <div class="faq-container">
+    <div class="faq-questions">
+      <div class="faq-category-section active">
+        <h2 class="faq-category-title">风水常见问题</h2>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Q1: 什么是风水？
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            A:
+            风水是一门有3000年历史的中国实践，通过环境布置来创造和谐与平衡。字面意思是"风"和"水"，代表自然元素如何影响我们的生活空间。
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Q2: 为什么八卦图很重要？
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            A:
+            八卦图是风水的核心工具，将空间分为9个区域，每个区域对应生活的不同方面(财富、健康、爱情等)。它帮助我们识别和增强这些区域。
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Q3: 水晶和风水物品真的有用吗？
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            A:
+            是的，但关键是要正确使用。水晶、风铃等物品是能量调节工具，需要根据具体问题和空间位置选择。它们本身不是魔法物品，而是能量引导媒介。
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Q4: 风水效果需要多久显现？
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            A: 有些变化可能立即感受到(如更平静的氛围)，而更深层的变化可能需要几周到几个月。持续实践和微调是关键。
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Q5: 风水与宗教冲突吗？
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            A: 不冲突。风水是环境科学，不是宗教。它适用于任何信仰系统，可以与其他精神实践和谐共存。
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Q6: 为什么门和窗的位置很重要？
+            <span class="faq-question">+</span>
+          </button>
+          <div class="faq-answer">
+            A:
+            门窗是能量(气)的入口。理想情况下，门不应直对窗或另一扇门，否则能量会过快流失。适当的布局能让能量在空间中和谐流动。
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Q7: 风水只适用于家居吗？
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            A: 不，风水原则适用于任何空间 - 家庭、办公室、商店甚至城市。任何人类活动的环境都能从风水平衡中受益。
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Q8: 有什么简单的5分钟风水调整？
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            A: 清理门口区域 - 确保入口干净、明亮、无障碍。这是能量进入的主要通道，保持通畅能立即改善整个空间的气流。
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .faq-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .faq-category-btn {
+    padding: 10px 20px;
+    background: {{ settings.color_button_bg }};
+    color: {{ settings.color_button_text }};
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .faq-category-btn:hover {
+    background: {{ settings.color_button_bg | color_darken: 10 }};
+  }
+
+  .faq-category-section {
+    display: none;
+    margin-bottom: 40px;
+  }
+
+  .faq-category-section.active {
+    display: block;
+  }
+
+  .faq-category-title {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: {{ settings.color_heading }};
+    border-bottom: 1px solid {{ settings.color_borders }};
+    padding-bottom: 10px;
+  }
+
+  .faq-item {
+    margin-bottom: 15px;
+    border: 1px solid {{ settings.color_borders }};
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .faq-question {
+    width: 100%;
+    padding: 15px 20px;
+    text-align: left;
+    background: {{ settings.color_body_bg }};
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .faq-question:hover {
+    background: {{ settings.color_body_bg | color_darken: 2 }};
+  }
+
+  .faq-toggle {
+    font-size: 1.2em;
+  }
+
+  .faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    background: {{ settings.color_body_bg | color_lighten: 2 }};
+  }
+
+  .faq-item.active .faq-answer {
+    padding: 20px;
+    max-height: 500px;
+  }
+
+  .faq-item.active .faq-toggle {
+    transform: rotate(45deg);
+  }
+
+  @media (min-width: 750px) {
+    .faq-container {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+    .faq-categories {
+      flex-direction: column;
+      position: sticky;
+      top: 20px;
+      width: 250px;
+    }
+
+    .faq-questions {
+      flex: 1;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // 默认显示第一个分类
+    const firstCategory = document.querySelector('.faq-category-section');
+    if (firstCategory) firstCategory.classList.add('active');
+
+    // 分类切换
+    const categoryBtns = document.querySelectorAll('.faq-category-btn');
+    categoryBtns.forEach((btn) => {
+      btn.addEventListener('click', function () {
+        const category = this.dataset.category;
+        document.querySelectorAll('.faq-category-section').forEach((section) => {
+          section.classList.remove('active');
+        });
+        document.querySelector(`.faq-category-section[data-category="${category}"]`).classList.add('active');
+
+        // 更新活动按钮样式
+        categoryBtns.forEach((b) => b.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+
+    // 问题展开/收起
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach((question) => {
+      question.addEventListener('click', function () {
+        const item = this.parentElement;
+        item.classList.toggle('active');
+      });
+    });
+  });
+</script>
