@@ -1,0 +1,15 @@
+<div class="page-container page-width">
+  {% render 'component-customer-list', limit: 10, offset: 0, tag: 'Bottoms' %}
+</div>
+<style>
+  @media screen and (max-width: 768px) {
+    .page-container {
+      padding: 0 15px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .page-container {
+      padding: 0 10px;
+    }
+  }
+</style>

@@ -1,0 +1,16 @@
+<div class="page-container page-width">
+  {% comment %} 11111{{ collections.all.products | json }} {% endcomment %}
+  {% render 'component-customer-list', limit: 14, offset: 0, tag: 'New' %}
+</div>
+<style>
+  @media screen and (max-width: 768px) {
+    .page-container {
+      padding: 0 15px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .page-container {
+      padding: 0 10px;
+    }
+  }
+</style>
