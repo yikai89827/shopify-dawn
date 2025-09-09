@@ -9,6 +9,16 @@
       "default": "Fortune & Career Flow Formation"
     },
     {
+      "type": "text",
+      "id": "button_text",
+      "label": "按钮文字"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "按钮链接"
+    },
+    {
       "type": "image_picker",
       "id": "bg_image",
       "label": "背景图片"
@@ -66,6 +76,11 @@
         <div class="content-text">
           {{ section.settings.content_text }}
         </div>
+        {% if section.settings.button_text != blank %}
+          <a href="{{ section.settings.button_link }}" class="button fengshui-button">
+            {{ section.settings.button_text }}
+          </a>
+        {% endif %}
       </div>
     </div>
   </div>
@@ -127,6 +142,21 @@
     font-size: 1.5rem;
     line-height: 1.8;
     color: #555;
+    margin-bottom: 20px;
+  }
+
+  .fengshui-button {
+    background-color: #8b4513;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s;
+  }
+
+  .fengshui-button:hover {
+    background-color: #5c3a21;
   }
 
   @media (max-width: 768px) {
