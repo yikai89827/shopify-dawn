@@ -82,6 +82,7 @@
       "name": "天轨八卦风水布局",
       "settings": {
         "title": "Celestial Orbit Formation",
+        "bg_image": "shopify://shop_images/bj.jpg",
         "tray_title": "八卦沙盘",
         "tray_desc": "<p>将八卦沙盘分为阴(黑色磁砂)和阳(红色朱砂)两个区域作为基础。</p>",
         "east_desc": "<p>铜制青龙搭配苔藓玛瑙和竹子，激活春季生长能量。</p>",
