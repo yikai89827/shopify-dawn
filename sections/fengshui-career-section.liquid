@@ -1,0 +1,257 @@
+{% schema %}
+{
+  "name": "事业财富风水布局",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "标题",
+      "default": "Fortune & Career Flow Formation"
+    },
+    {
+      "type": "header",
+      "content": "中心区域设置"
+    },
+    {
+      "type": "image_picker",
+      "id": "center_image",
+      "label": "中心物品图片"
+    },
+    {
+      "type": "richtext",
+      "id": "center_desc",
+      "label": "中心描述",
+      "default": "<p>将\"Compass Sand Tray\"放在桌子或架子的中心位置，作为强大的基础，稳定意图并调和周围的能量。</p>"
+    },
+    {
+      "type": "header",
+      "content": "西北方位设置(事业)"
+    },
+    {
+      "type": "image_picker",
+      "id": "nw_image",
+      "label": "西北物品图片"
+    },
+    {
+      "type": "richtext",
+      "id": "nw_desc",
+      "label": "西北描述",
+      "default": "<p>在沙盘的西北部分放置\"Brass Abacus\"，以催化职业发展、增强资源管理技巧和促进宝贵的联系。</p>"
+    },
+    {
+      "type": "header",
+      "content": "东南方位设置(财富)"
+    },
+    {
+      "type": "image_picker",
+      "id": "se_image",
+      "label": "东南物品图片"
+    },
+    {
+      "type": "richtext",
+      "id": "se_desc",
+      "label": "东南描述",
+      "default": "<p>在沙盘的东南部分放置\"Golden Abundance Vase\"，并填充干净的水或米，以吸引和培养财富能量。</p>"
+    },
+    {
+      "type": "header",
+      "content": "核心财富设置"
+    },
+    {
+      "type": "image_picker",
+      "id": "wealth_image",
+      "label": "核心财富物品图片"
+    },
+    {
+      "type": "richtext",
+      "id": "wealth_desc",
+      "label": "核心财富描述",
+      "default": "<p>在沙盘的中心显著展示\"Gold Ingot(s)\"，象征着财富的积极显现和在和谐空间中稳固的繁荣。</p>"
+    },
+    {
+      "type": "header",
+      "content": "激活方法"
+    },
+    {
+      "type": "richtext",
+      "id": "activation_desc",
+      "label": "激活描述",
+      "default": "<p>每天通过轻轻移动算盘上的珠子并想象财务收益和成功来进行互动。确保水晶瓶保持清洁和活力，以增强其能量。</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "事业财富风水布局",
+      "category": "风水布局"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="fengshui-career-section">
+  <div class="page-width">
+    <h2 class="career-title">{{ section.settings.title }}</h2>
+
+    <div class="career-grid">
+      <div class="grid-center">
+        {% if section.settings.center_image != blank %}
+          <img
+            src="{{ section.settings.center_image | img_url: '400x' }}"
+            alt="中心风水物品"
+            width="400"
+            height="400"
+            loading="lazy"
+          >
+        {% endif %}
+        <div class="career-desc">
+          {{ section.settings.center_desc }}
+        </div>
+      </div>
+
+      <div class="grid-nw">
+        {% if section.settings.nw_image != blank %}
+          <img
+            src="{{ section.settings.nw_image | img_url: '300x' }}"
+            alt="西北风水物品"
+            width="300"
+            height="300"
+            loading="lazy"
+          >
+        {% endif %}
+        <div class="career-desc">
+          {{ section.settings.nw_desc }}
+        </div>
+      </div>
+
+      <div class="grid-se">
+        {% if section.settings.se_image != blank %}
+          <img
+            src="{{ section.settings.se_image | img_url: '300x' }}"
+            alt="东南风水物品"
+            width="300"
+            height="300"
+            loading="lazy"
+          >
+        {% endif %}
+        <div class="career-desc">
+          {{ section.settings.se_desc }}
+        </div>
+      </div>
+
+      <div class="grid-wealth">
+        {% if section.settings.wealth_image != blank %}
+          <img
+            src="{{ section.settings.wealth_image | img_url: '300x' }}"
+            alt="核心财富物品"
+            width="300"
+            height="300"
+            loading="lazy"
+          >
+        {% endif %}
+        <div class="career-desc">
+          {{ section.settings.wealth_desc }}
+        </div>
+      </div>
+    </div>
+
+    <div class="activation-section">
+      <h3>激活方法</h3>
+      <div class="activation-desc">
+        {{ section.settings.activation_desc }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .fengshui-career-section {
+    padding: 60px 0;
+    background: #f9f5f0;
+  }
+
+  .career-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #5c3a21;
+    margin-bottom: 50px;
+  }
+
+  .career-grid {
+    display: grid;
+    grid-template-areas:
+      'center center'
+      'nw se'
+      'wealth wealth';
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .grid-center {
+    grid-area: center;
+    text-align: center;
+  }
+
+  .grid-nw {
+    grid-area: nw;
+  }
+
+  .grid-se {
+    grid-area: se;
+  }
+
+  .grid-wealth {
+    grid-area: wealth;
+    text-align: center;
+  }
+
+  .career-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+
+  .career-desc {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+  }
+
+  .activation-section {
+    max-width: 800px;
+    margin: 50px auto 0;
+    padding: 30px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .activation-section h3 {
+    font-size: 1.5rem;
+    color: #5c3a21;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .activation-desc {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+  }
+
+  @media (max-width: 768px) {
+    .career-grid {
+      grid-template-areas:
+        'center'
+        'nw'
+        'se'
+        'wealth';
+    }
+
+    .career-title {
+      font-size: 1.8rem;
+    }
+  }
+</style>
