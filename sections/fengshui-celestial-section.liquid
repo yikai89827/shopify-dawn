@@ -1,0 +1,471 @@
+{% schema %}
+{
+  "name": "天轨八卦风水布局",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "标题",
+      "default": "Celestial Orbit Formation"
+    },
+    {
+      "type": "header",
+      "content": "核心设置"
+    },
+    {
+      "type": "image_picker",
+      "id": "tray_image",
+      "label": "八卦沙盘图片"
+    },
+    {
+      "type": "richtext",
+      "id": "tray_desc",
+      "label": "沙盘描述",
+      "default": "<p>将八卦沙盘分为阴(黑色磁砂)和阳(红色朱砂)两个区域作为基础。</p>"
+    },
+    {
+      "type": "header",
+      "content": "四位守护神"
+    },
+    {
+      "type": "image_picker",
+      "id": "east_image",
+      "label": "东方青龙图片"
+    },
+    {
+      "type": "richtext",
+      "id": "east_desc",
+      "label": "东方描述",
+      "default": "<p>铜制青龙搭配苔藓玛瑙和竹子，激活春季生长能量。</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "south_image",
+      "label": "南方凤凰图片"
+    },
+    {
+      "type": "richtext",
+      "id": "south_desc",
+      "label": "南方描述",
+      "default": "<p>铜制凤凰放在红色紫晶盘上，配有石榴花，激发夏季活力。</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "west_image",
+      "label": "西方貔貅图片"
+    },
+    {
+      "type": "richtext",
+      "id": "west_desc",
+      "label": "西方描述",
+      "default": "<p>面对门的铜制貔貅，踩在黄铁矿上，手持琥珀硬币，收获秋季财富。</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "north_image",
+      "label": "北方玄武图片"
+    },
+    {
+      "type": "richtext",
+      "id": "north_desc",
+      "label": "北方描述",
+      "default": "<p>携带雪黑曜石和月光水碗的铜制乌龟，锚定冬季智慧。</p>"
+    },
+    {
+      "type": "header",
+      "content": "季节节点"
+    },
+    {
+      "type": "image_picker",
+      "id": "se_image",
+      "label": "东南节点图片"
+    },
+    {
+      "type": "richtext",
+      "id": "se_desc",
+      "label": "东南描述",
+      "default": "<p>马达加斯加红宝石和柳枝，代表血液/生命能量。</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "sw_image",
+      "label": "西南节点图片"
+    },
+    {
+      "type": "richtext",
+      "id": "sw_desc",
+      "label": "西南描述",
+      "default": "<p>粉色水晶花瓶配莲花和金色沙子，象征爱与和谐。</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "nw_image",
+      "label": "西北节点图片"
+    },
+    {
+      "type": "richtext",
+      "id": "nw_desc",
+      "label": "西北描述",
+      "default": "<p>桃花熏香炉配稻穗花纹丝绸，关联事业/资源。</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "ne_image",
+      "label": "东北节点图片"
+    },
+    {
+      "type": "richtext",
+      "id": "ne_desc",
+      "label": "东北描述",
+      "default": "<p>青金石下方有山石和棉花\"雪\"，表示稳定/知识。</p>"
+    },
+    {
+      "type": "header",
+      "content": "中心轴"
+    },
+    {
+      "type": "image_picker",
+      "id": "center_image",
+      "label": "中心文昌塔图片"
+    },
+    {
+      "type": "richtext",
+      "id": "center_desc",
+      "label": "中心描述",
+      "default": "<p>铜制文昌宝塔刺穿阴阳符号，刻有四季符号：龙(春)、凤(夏)、貔貅(秋)、龟(冬)。</p>"
+    },
+    {
+      "type": "header",
+      "content": "激活方法"
+    },
+    {
+      "type": "richtext",
+      "id": "activation_desc",
+      "label": "激活描述",
+      "default": "<p>冬至/夏至和春秋分时旋转沙盘，夏季正午和冬季子时进行特别激活仪式。</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "天轨八卦风水布局",
+      "category": "风水布局"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="fengshui-celestial-section">
+  <div class="page-width">
+    <h2 class="celestial-title">{{ section.settings.title }}</h2>
+
+    <div class="celestial-container">
+      <!-- 核心设置 -->
+      <div class="tray-section">
+        {% if section.settings.tray_image != blank %}
+          <img
+            src="{{ section.settings.tray_image | img_url: '600x' }}"
+            alt="八卦沙盘"
+            width="600"
+            height="600"
+            loading="lazy"
+          >
+        {% endif %}
+        <div class="tray-desc">
+          {{ section.settings.tray_desc }}
+        </div>
+      </div>
+
+      <!-- 四位守护神 -->
+      <div class="guardians-grid">
+        <div class="guardian east">
+          {% if section.settings.east_image != blank %}
+            <img
+              src="{{ section.settings.east_image | img_url: '300x' }}"
+              alt="东方青龙"
+              width="300"
+              height="300"
+              loading="lazy"
+            >
+          {% endif %}
+          <div class="guardian-desc">
+            {{ section.settings.east_desc }}
+          </div>
+        </div>
+
+        <div class="guardian south">
+          {% if section.settings.south_image != blank %}
+            <img
+              src="{{ section.settings.south_image | img_url: '300x' }}"
+              alt="南方凤凰"
+              width="300"
+              height="300"
+              loading="lazy"
+            >
+          {% endif %}
+          <div class="guardian-desc">
+            {{ section.settings.south_desc }}
+          </div>
+        </div>
+
+        <div class="guardian west">
+          {% if section.settings.west_image != blank %}
+            <img
+              src="{{ section.settings.west_image | img_url: '300x' }}"
+              alt="西方貔貅"
+              width="300"
+              height="300"
+              loading="lazy"
+            >
+          {% endif %}
+          <div class="guardian-desc">
+            {{ section.settings.west_desc }}
+          </div>
+        </div>
+
+        <div class="guardian north">
+          {% if section.settings.north_image != blank %}
+            <img
+              src="{{ section.settings.north_image | img_url: '300x' }}"
+              alt="北方玄武"
+              width="300"
+              height="300"
+              loading="lazy"
+            >
+          {% endif %}
+          <div class="guardian-desc">
+            {{ section.settings.north_desc }}
+          </div>
+        </div>
+      </div>
+
+      <!-- 季节节点 -->
+      <div class="season-nodes">
+        <div class="node se">
+          {% if section.settings.se_image != blank %}
+            <img
+              src="{{ section.settings.se_image | img_url: '250x' }}"
+              alt="东南节点"
+              width="250"
+              height="250"
+              loading="lazy"
+            >
+          {% endif %}
+          <div class="node-desc">
+            {{ section.settings.se_desc }}
+          </div>
+        </div>
+
+        <div class="node sw">
+          {% if section.settings.sw_image != blank %}
+            <img
+              src="{{ section.settings.sw_image | img_url: '250x' }}"
+              alt="西南节点"
+              width="250"
+              height="250"
+              loading="lazy"
+            >
+          {% endif %}
+          <div class="node-desc">
+            {{ section.settings.sw_desc }}
+          </div>
+        </div>
+
+        <div class="node nw">
+          {% if section.settings.nw_image != blank %}
+            <img
+              src="{{ section.settings.nw_image | img_url: '250x' }}"
+              alt="西北节点"
+              width="250"
+              height="250"
+              loading="lazy"
+            >
+          {% endif %}
+          <div class="node-desc">
+            {{ section.settings.nw_desc }}
+          </div>
+        </div>
+
+        <div class="node ne">
+          {% if section.settings.ne_image != blank %}
+            <img
+              src="{{ section.settings.ne_image | img_url: '250x' }}"
+              alt="东北节点"
+              width="250"
+              height="250"
+              loading="lazy"
+            >
+          {% endif %}
+          <div class="node-desc">
+            {{ section.settings.ne_desc }}
+          </div>
+        </div>
+      </div>
+
+      <!-- 中心轴 -->
+      <div class="center-axis">
+        {% if section.settings.center_image != blank %}
+          <img
+            src="{{ section.settings.center_image | img_url: '400x' }}"
+            alt="中心文昌塔"
+            width="400"
+            height="400"
+            loading="lazy"
+          >
+        {% endif %}
+        <div class="axis-desc">
+          {{ section.settings.center_desc }}
+        </div>
+      </div>
+
+      <!-- 激活方法 -->
+      <div class="activation-section">
+        <h3>激活方法</h3>
+        <div class="activation-desc">
+          {{ section.settings.activation_desc }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .fengshui-celestial-section {
+    padding: 60px 0;
+    background: #f9f5f0;
+  }
+
+  .celestial-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #5c3a21;
+    margin-bottom: 50px;
+  }
+
+  .tray-section {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .tray-section img {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .tray-desc {
+    max-width: 600px;
+    margin: 20px auto 0;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+  }
+
+  .guardians-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+
+  .guardian {
+    text-align: center;
+  }
+
+  .guardian img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+  }
+
+  .guardian-desc {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+  }
+
+  .season-nodes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+
+  .node {
+    text-align: center;
+  }
+
+  .node img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+  }
+
+  .node-desc {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+  }
+
+  .center-axis {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .center-axis img {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+
+  .axis-desc {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+  }
+
+  .activation-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .activation-section h3 {
+    font-size: 1.5rem;
+    color: #5c3a21;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .activation-desc {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+  }
+
+  @media (max-width: 768px) {
+    .guardians-grid,
+    .season-nodes {
+      grid-template-columns: 1fr;
+    }
+
+    .celestial-title {
+      font-size: 1.8rem;
+    }
+  }
+</style>
