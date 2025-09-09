@@ -30,9 +30,9 @@
 {% endschema %}
 
 <div class="fengshui-celestial-section">
-  <div class="page-width" style="background-image: url('{{ section.settings.bg_image | img_url: '2000x' }}');">
+  <div class="page-width">
     <h2 class="celestial-title">{{ section.settings.title }}</h2>
-    <div class="celestial-content">
+    <div class="celestial-content" style="background-image: url('{{ section.settings.bg_image | img_url: '2000x' }}');">
       {{ section.settings.content }}
     </div>
   </div>
@@ -70,6 +70,7 @@
   }
 
   .celestial-content {
+    max-width: 100px;
     margin: 0 auto;
     padding: 30px;
     background: transparent;
