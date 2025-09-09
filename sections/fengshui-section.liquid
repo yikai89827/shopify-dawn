@@ -67,13 +67,13 @@
           <p class="fengshui-subtitle">{{ section.settings.subtitle }}</p>
         </div>
         <div class="fengshui-description">
-          {{ section.settings.description }}
+          <span>{{ section.settings.description }}</span>
+          {% if section.settings.button_text != blank %}
+            <a href="{{ section.settings.button_link }}" class="button fengshui-button">
+              {{ section.settings.button_text }}
+            </a>
+          {% endif %}
         </div>
-        {% if section.settings.button_text != blank %}
-          <a href="{{ section.settings.button_link }}" class="button fengshui-button">
-            {{ section.settings.button_text }}
-          </a>
-        {% endif %}
       </div>
     </div>
   </div>
