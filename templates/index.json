@@ -77,11 +77,23 @@
         "description": "<p>Feng Shui as a form of environmental science creates measurable impact through interactions with architectural energy flows.</p>",
         "main_image": "shopify://shop_images/2.png"
       }
+    },
+    "fengshui_wisdom_section_AMPhtV": {
+      "type": "fengshui-wisdom-section",
+      "name": "风水智慧区块",
+      "settings": {
+        "title_line1": "Where Walls Whisper Wisdom",
+        "title_line2": "The Measurable Poetry of",
+        "title_line3": "Feng Shui Science",
+        "description": "<p>Discover the ancient wisdom of Feng Shui through our carefully curated collection of golden ornaments.</p>",
+        "main_image": "shopify://shop_images/3.png"
+      }
     }
   },
   "order": [
     "image_banner",
     "fengshui_section_97zCz9",
-    "fengshui_science_section_HdtKjr"
+    "fengshui_science_section_HdtKjr",
+    "fengshui_wisdom_section_AMPhtV"
   ]
 }
