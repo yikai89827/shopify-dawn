@@ -70,10 +70,6 @@
       "type": "fengshui-wisdom-section",
       "name": "风水智慧区块",
       "settings": {
-        "title_line1": "Where Walls Whisper Wisdom",
-        "title_line2": "",
-        "title_line3": "The Measurable Poetry of Feng Shui Science",
-        "description": "",
         "main_image": "shopify://shop_images/3.png"
       }
     },
