@@ -231,6 +231,7 @@
         "type": "fengshui-Cocoon-section-2",
         "settings": {
           "title": "天轨八卦风水布局",
+          "bg_image": "shopify://shop_images/bj.jpg",
           "content": "<p>在此输入风水布局内容</p>"
         }
       },
