@@ -4,9 +4,27 @@
   "settings": [
     {
       "type": "text",
-      "id": "title",
-      "label": "标题",
-      "default": "Fortune & Career Flow Formation"
+      "id": "title_line1",
+      "label": "标题1",
+      "default": "Golden"
+    },
+    {
+      "type": "text",
+      "id": "title_line2",
+      "label": "标题2",
+      "default": "Career"
+    },
+    {
+      "type": "text",
+      "id": "title_line3",
+      "label": "标题3",
+      "default": "ascension"
+    },
+    {
+      "type": "text",
+      "id": "title_line4",
+      "label": "标题4",
+      "default": "grid"
     },
     {
       "type": "image_picker",
@@ -47,10 +65,14 @@
   {% endif %}
 >
   <div class="page-width">
-    <h2 class="career-title">{{ section.settings.title }}</h2>
-
     <div class="career-content">
       <div class="content-left">
+        <div class="wisdom-header">
+          <h2 class="career-title">{{ section.settings.title_line1 }}</h2>
+          <h2 class="career-title">{{ section.settings.title_line2 }}</h2>
+          <h2 class="career-title">{{ section.settings.title_line3 }}</h2>
+          <h2 class="career-title">{{ section.settings.title_line4 }}</h2>
+        </div>
         {% if section.settings.content_image != blank %}
           <img
             src="{{ section.settings.content_image | img_url: '800x' }}"
@@ -95,12 +117,18 @@
     z-index: 1;
   }
 
+  .wisdom-header {
+    position: absolute;
+    top: 25px;
+    left: 15px;
+    text-align: left;
+  }
+
   .career-title {
-    text-align: center;
-    font-size: 2.2rem;
-    color: #5c3a21;
-    margin-bottom: 50px;
-    margin-top:0;
+    font-weight: 600;
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.1);
   }
 
   .career-content {
