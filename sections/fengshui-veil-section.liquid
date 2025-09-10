@@ -1,0 +1,77 @@
+{% schema %}
+{
+  "name": "blossom veil",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "veil_image",
+      "label": "背景图片"
+    }
+  ],
+  "presets": [
+    {
+      "name": "blossom veil",
+      "category": "特殊布局"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="veil-container">
+  {% if section.settings.veil_image != blank %}
+    <img
+      width="100%"
+      height="auto"
+      src="{{ section.settings.veil_image | img_url: '2000x' }}"
+      alt="blossom veil"
+      class="veil-image"
+    >
+    <div class="veil-words">
+      <span class="word blossom">blossom</span>
+      <span class="word veil">veil</span>
+    </div>
+  {% endif %}
+</div>
+
+<style>
+  .veil-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .veil-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .veil-words {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .word {
+    font-size: 4rem;
+    font-weight: 300;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    mix-blend-mode: overlay;
+    opacity: 0.9;
+    margin: 1rem 0;
+  }
+
+  @media (max-width: 768px) {
+    .word {
+      font-size: 2.5rem;
+    }
+  }
+</style>
