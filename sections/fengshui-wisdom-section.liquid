@@ -4,9 +4,21 @@
   "settings": [
     {
       "type": "text",
-      "id": "title_line",
-      "label": "标题",
+      "id": "title_line1",
+      "label": "标题1",
       "default": "Where Walls Whisper Wisdom"
+    },
+    {
+      "type": "text",
+      "id": "title_line2",
+      "label": "标题2",
+      "default": "The Measurable Poetry of"
+    },
+    {
+      "type": "text",
+      "id": "title_line3",
+      "label": "标题3",
+      "default": "Feng Shui Science"
     },
     {
       "type": "image_picker",
@@ -26,7 +38,11 @@
 <div class="fengshui-wisdom-section">
   <div class="page-width">
     <div class="wisdom-display">
-      <h2 class="wisdom-line">{{ section.settings.title_line }}</h2>
+      <div class="wisdom-header">
+        <h2 class="wisdom-line">{{ section.settings.title_line1 }}</h2>
+        <h2 class="wisdom-line">{{ section.settings.title_line2 }}</h2>
+        <h2 class="wisdom-line">{{ section.settings.title_line3 }}</h2>
+      </div>
       {% if section.settings.main_image != blank %}
         <div class="main-display">
           <img
@@ -52,7 +68,7 @@
     position: relative;
   }
 
-  .wisdom-line {
+  .wisdom-header {
     font-size: 3rem;
     color: #fff;
     font-weight: 400;
