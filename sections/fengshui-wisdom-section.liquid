@@ -4,47 +4,14 @@
   "settings": [
     {
       "type": "text",
-      "id": "title_line1",
-      "label": "标题行1",
+      "id": "title_line",
+      "label": "标题",
       "default": "Where Walls Whisper Wisdom"
-    },
-    {
-      "type": "text",
-      "id": "title_line2",
-      "label": "标题行2",
-      "default": "The Measurable Poetry of"
-    },
-    {
-      "type": "text",
-      "id": "title_line3",
-      "label": "标题行3",
-      "default": "Feng Shui Science"
-    },
-    {
-      "type": "richtext",
-      "id": "description",
-      "label": "描述内容",
-      "default": "<p>Discover the ancient wisdom of Feng Shui through our carefully curated collection of golden ornaments.</p>"
     },
     {
       "type": "image_picker",
       "id": "main_image",
       "label": "主展示图片"
-    },
-    {
-      "type": "image_picker",
-      "id": "hulu_image",
-      "label": "葫芦装饰图片"
-    },
-    {
-      "type": "image_picker",
-      "id": "yuanbao_image",
-      "label": "元宝装饰图片"
-    },
-    {
-      "type": "image_picker",
-      "id": "lion_image",
-      "label": "石狮子图片"
     }
   ],
   "presets": [
@@ -59,13 +26,7 @@
 <div class="fengshui-wisdom-section">
   <div class="page-width">
     <div class="wisdom-header">
-      <h2 class="wisdom-line1">{{ section.settings.title_line1 }}</h2>
-      <h3 class="wisdom-line2">{{ section.settings.title_line2 }}</h3>
-      <h2 class="wisdom-line3">{{ section.settings.title_line3 }}</h2>
-    </div>
-
-    <div class="wisdom-description">
-      {{ section.settings.description }}
+      <h2 class="wisdom-line">{{ section.settings.title_line }}</h2>
     </div>
 
     <div class="wisdom-display">
@@ -80,47 +41,6 @@
           >
         </div>
       {% endif %}
-
-      <div class="item-grid">
-        {% if section.settings.hulu_image != blank %}
-          <div class="wisdom-item">
-            <img
-              src="{{ section.settings.hulu_image | img_url: '400x' }}"
-              alt="葫芦风水装饰"
-              width="400"
-              height="400"
-              loading="lazy"
-            >
-            <p class="item-label">葫芦 - 福禄双全</p>
-          </div>
-        {% endif %}
-
-        {% if section.settings.yuanbao_image != blank %}
-          <div class="wisdom-item">
-            <img
-              src="{{ section.settings.yuanbao_image | img_url: '400x' }}"
-              alt="元宝风水装饰"
-              width="400"
-              height="400"
-              loading="lazy"
-            >
-            <p class="item-label">金元宝 - 招财进宝</p>
-          </div>
-        {% endif %}
-
-        {% if section.settings.lion_image != blank %}
-          <div class="wisdom-item">
-            <img
-              src="{{ section.settings.lion_image | img_url: '400x' }}"
-              alt="石狮子风水装饰"
-              width="400"
-              height="400"
-              loading="lazy"
-            >
-            <p class="item-label">石狮子 - 镇宅辟邪</p>
-          </div>
-        {% endif %}
-      </div>
     </div>
   </div>
 </div>
@@ -129,31 +49,23 @@
   .fengshui-wisdom-section {
     padding: 60px 0;
     background: linear-gradient(135deg, #f5f0e6 0%, #e8d9c5 100%);
+    position: relative;
   }
 
   .wisdom-header {
     text-align: center;
     margin-bottom: 30px;
+    position: absolute;
+    top: 15px;
+    transform: translateY(-50%);
+    text-align: right;
   }
 
-  .wisdom-line1 {
+  .wisdom-line {
     font-size: 2rem;
-    color: #5c3a21;
+    color: #fff;
     margin-bottom: 10px;
     font-weight: 400;
-  }
-
-  .wisdom-line2 {
-    font-size: 1.5rem;
-    color: #8b4513;
-    margin-bottom: 5px;
-    font-weight: 300;
-  }
-
-  .wisdom-line3 {
-    font-size: 2.2rem;
-    color: #5c3a21;
-    font-weight: 500;
   }
 
   .wisdom-description {
