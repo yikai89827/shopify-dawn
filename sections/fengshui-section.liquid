@@ -4,15 +4,27 @@
   "settings": [
     {
       "type": "text",
-      "id": "title",
-      "label": "标题",
-      "default": "Powerful Healing Starts with Personalized Feng Shui Arrangement"
+      "id": "title_line1",
+      "label": "标题1",
+      "default": "Powerful Healing"
     },
     {
       "type": "text",
-      "id": "subtitle",
-      "label": "副标题",
-      "default": "The ancient art of harmonizing energy flow"
+      "id": "title_line2",
+      "label": "标题2",
+      "default": "Starts with"
+    },
+    {
+      "type": "text",
+      "id": "title_line3",
+      "label": "标题3",
+      "default": "Personalized"
+    },
+    {
+      "type": "text",
+      "id": "title_line4",
+      "label": "标题4",
+      "default": "Feng Shui Arrangment"
     },
     {
       "type": "image_picker",
@@ -63,8 +75,10 @@
       </div>
       <div class="fengshui-content">
         <div class="fengshui-hero">
-          <h1 class="fengshui-title">{{ section.settings.title }}</h1>
-          <p class="fengshui-subtitle">{{ section.settings.subtitle }}</p>
+          <h2 class="hero-title">{{ section.settings.title_line1 }}</h2>
+          <h2 class="hero-title">{{ section.settings.title_line2 }}</h2>
+          <h2 class="hero-title">{{ section.settings.title_line3 }}</h2>
+          <h2 class="hero-title">{{ section.settings.title_line4 }}</h2>
         </div>
         <div class="fengshui-description">
           {{ section.settings.description }}
@@ -86,21 +100,16 @@
   }
 
   .fengshui-hero {
-    text-align: center;
+    text-align: left;
     margin-bottom: 50px;
   }
 
-  .fengshui-title {
-    font-size: 2.5rem;
-    color: #5c3a21;
-    margin-bottom: 15px;
-    font-weight: 400;
-  }
-
-  .fengshui-subtitle {
-    font-size: 1.2rem;
-    color: #8b4513;
-    margin: 0;
+  .hero-title {
+    font-size: 4rem;
+    color: #000;
+    margin-bottom: 78px;
+    margin-top: 0;
+    font-weight: 600;
   }
 
   .fengshui-container {
