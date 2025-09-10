@@ -32,7 +32,7 @@
 <div
   class="fengshui-harmony-section"
   {% if section.settings.bg_image != blank %}
-    style="background-image: url('{{ section.settings.bg_image | img_url: '2000x' }}');"
+    style="background: url('{{ section.settings.bg_image | img_url: '2000x' }}')  center center / cover no-repeat;"
   {% endif %}
 >
   <div class="page-width harmony-container">
