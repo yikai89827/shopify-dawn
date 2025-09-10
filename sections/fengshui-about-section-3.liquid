@@ -4,9 +4,21 @@
   "settings": [
     {
       "type": "text",
-      "id": "title",
-      "label": "标题",
-      "default": "Fortune & Career Flow Formation"
+      "id": "title_line1",
+      "label": "标题1",
+      "default": "Master Ma"
+    },
+    {
+      "type": "text",
+      "id": "title_line2",
+      "label": "标题2",
+      "default": "Feng Shui Consultant /Energy Alignment "
+    },
+    {
+      "type": "text",
+      "id": "title_line3",
+      "label": "标题3",
+      "default": "Specialist"
     },
     {
       "type": "image_picker",
@@ -41,16 +53,19 @@
 {% endschema %}
 
 <div
-  class="fengshui-career-section"
+  class="fengshui-about-3-section"
   {% if section.settings.bg_image != blank %}
     style="background: url('{{ section.settings.bg_image | img_url: '2000x' }}') center center / cover no-repeat;"
   {% endif %}
 >
   <div class="page-width">
-    <h2 class="career-title">{{ section.settings.title }}</h2>
-
-    <div class="career-content">
+    <div class="about-3-content">
       <div class="content-left">
+        <div class="about-words-3">
+          <span class="title">{{ section.settings.title_line1 }}</span>
+          <span class="sub-title">{{ section.settings.title_line2 }}</span>
+          <span class="sub-title">{{ section.settings.title_line3 }}</span>
+        </div>
         <div class="content-text">
           {{ section.settings.content_text }}
         </div>
@@ -72,13 +87,13 @@
 </div>
 
 <style>
-  .fengshui-career-section {
+  .fengshui-about-3-section {
     padding: 0;
     background-size: cover;
     background-position: center;
     position: relative;
   }
-  .fengshui-career-section::before {
+  .fengshui-about-3-section::before {
     content: '';
     position: absolute;
     top: 0;
@@ -89,20 +104,39 @@
     opacity: 0.85;
     z-index: 0;
   }
-  .fengshui-career-section .page-width {
+  .fengshui-about-3-section .page-width {
     position: relative;
     z-index: 1;
   }
 
-  .career-title {
+  .about-words-3 {
     text-align: center;
     font-size: 2.2rem;
     color: #5c3a21;
     margin-bottom: 50px;
-        margin-top:0;
+    margin-top:0;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 50px;
+  }
+  .about-words-3 .title {
+    font-size: 5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .about-words-3 .sub-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .about-words-3 .sub-title {
+    font-size: 1.8rem;
+    color: #7a5b46;
   }
 
-  .career-content {
+  .about-3-content {
     display: flex;
     gap: 40px;
     max-width: 1200px;
@@ -131,10 +165,10 @@
   }
 
   @media (max-width: 768px) {
-    .career-content {
+    .about-3-content {
       flex-direction: column;
     }
-    .career-title {
+    .about-3-title {
       font-size: 1.8rem;
     }
   }
