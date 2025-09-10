@@ -236,7 +236,9 @@
       },
       "fengshui-veil-section": {
         "type": "fengshui-veil-section",
-        "settings": {}
+        "settings": {
+          "veil_image": "shopify://shop_images/13.png"
+        }
       },
       "fengshui-veil-section-2": {
         "type": "fengshui-veil-section-2",
