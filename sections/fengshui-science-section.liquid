@@ -41,13 +41,8 @@
 
 <div class="fengshui-science-section">
   <div class="page-width">
-    <h2 class="science-title">{{ section.settings.title }}</h2>
-
     <div class="science-content">
-      <div class="science-description">
-        {{ section.settings.description }}
-      </div>
-
+      <h2 class="science-title">{{ section.settings.title }}</h2>
       <div class="science-display">
         {% if section.settings.main_image != blank %}
           <div class="main-image">
@@ -87,6 +82,10 @@
           {% endif %}
         </div>
       </div>
+
+      <div class="science-description">
+        {{ section.settings.description }}
+      </div>
     </div>
   </div>
 </div>
@@ -98,17 +97,22 @@
   }
 
   .science-title {
-    font-size: 2.2rem;
-    color: #333;
+    font-size: 3.1rem;
+    color: #fff;
     text-align: center;
     margin-bottom: 30px;
     margin-top: 0;
     font-weight: 500;
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .science-content {
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
   }
 
   .science-description {
@@ -116,7 +120,7 @@
     line-height: 1.8;
     color: #555;
     margin-bottom: 40px;
-    text-align: center;
+    text-align: left;
   }
 
   .science-display {
