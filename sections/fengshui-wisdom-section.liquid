@@ -25,11 +25,8 @@
 
 <div class="fengshui-wisdom-section">
   <div class="page-width">
-    <div class="wisdom-header">
-      <h2 class="wisdom-line">{{ section.settings.title_line }}</h2>
-    </div>
-
     <div class="wisdom-display">
+      <h2 class="wisdom-line">{{ section.settings.title_line }}</h2>
       {% if section.settings.main_image != blank %}
         <div class="main-display">
           <img
@@ -49,32 +46,21 @@
   .fengshui-wisdom-section {
     padding: 60px 0;
     background: linear-gradient(135deg, #f5f0e6 0%, #e8d9c5 100%);
+  }
+
+  .wisdom-display {
     position: relative;
   }
 
-  .wisdom-header {
-    text-align: center;
-    margin-bottom: 30px;
+  .wisdom-line {
+    font-size: 3rem;
+    color: #fff;
+    font-weight: 400;
     position: absolute;
-    top: 15px;
+    top: 50%;
+    right: 15px;
     transform: translateY(-50%);
     text-align: right;
-  }
-
-  .wisdom-line {
-    font-size: 2rem;
-    color: #fff;
-    margin-bottom: 10px;
-    font-weight: 400;
-  }
-
-  .wisdom-description {
-    max-width: 800px;
-    margin: 0 auto 40px;
-    text-align: center;
-    font-size: 1.5rem;
-    line-height: 1.8;
-    color: #555;
   }
 
   .main-display {
@@ -88,52 +74,5 @@
     width: 100%;
     height: auto;
     display: block;
-  }
-
-  .item-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .wisdom-item {
-    text-align: center;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-  }
-
-  .wisdom-item:hover {
-    transform: translateY(-5px);
-  }
-
-  .wisdom-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 4px;
-    margin-bottom: 15px;
-  }
-
-  .item-label {
-    font-size: 1rem;
-    color: #8b4513;
-    margin: 0;
-    font-family: 'KaiTi', serif;
-  }
-
-  @media (max-width: 768px) {
-    .wisdom-line1 {
-      font-size: 1.8rem;
-    }
-    .wisdom-line2 {
-      font-size: 1.3rem;
-    }
-    .wisdom-line3 {
-      font-size: 2rem;
-    }
   }
 </style>
