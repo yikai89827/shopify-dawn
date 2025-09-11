@@ -28,20 +28,15 @@
           <div class="image-wrapper {% if forloop.first %}active{% endif %}" data-index="{{ forloop.index0 }}">
             {{ section.settings[image] | image_url: width: 800 | image_tag: class: 'featured-img' }}
             <div class="image-overlay">
-              <h3>{{ heading }}</h3>
+              <h3>
+                <a href="{{ cta_link }}" class="button">{{ cta_text }}</a>
+              </h3>
             </div>
           </div>
         {% endif %}
       {% endfor %}
     </div>
   </div>
-
-  <div class="featured-entry">
-    <h3>精选期刊</h3>
-    <p>{{ featured_entry }}</p>
-  </div>
-
-  <a href="{{ cta_link }}" class="button">{{ cta_text }}</a>
 </div>
 
 <style>
@@ -193,11 +188,6 @@
       "type": "url",
       "id": "cta_link",
       "label": "按钮链接"
-    },
-    {
-      "type": "textarea",
-      "id": "featured_entry",
-      "label": "精选期刊内容"
     },
     {
       "type": "textarea",
