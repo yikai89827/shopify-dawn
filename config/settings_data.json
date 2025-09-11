@@ -123,10 +123,11 @@
       "custom-community-section": {
         "type": "custom-community-section",
         "settings": {
-          "heading": "社区预览",
-          "slogan": "基于我们共享的",
-          "cta_text": "汇聚社群",
-          "cta_link": ""
+          "heading": "Community Preview",
+          "slogan": "Built on what we share.",
+          "cta_text": "Gather Community",
+          "cta_link": "shopify://pages/gather-community",
+          "background": "shopify://shop_images/stream-water-passing-through-cliffs.jpg"
         }
       },
       "custom-about-section": {
