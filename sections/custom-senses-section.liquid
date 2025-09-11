@@ -13,9 +13,9 @@
           {{ product.featured_image | image_url: width: 600 | image_tag }}
         </div>
         <div class="featured-product-info">
-          <h3>{{ product.title }}</h3>
-          {% if product.metafields.custom.series_name != blank %}
-            <p class="product-series">{{ product.metafields.custom.series_name }}</p>
+          <h3 class="product-name">{{ product.title }}</h3>
+          {% if product.handle != blank %}
+            <p class="product-series">{{ product.handle }}</p>
           {% endif %}
           <div class="product-price">
             {{ product.price | money }}
@@ -28,34 +28,76 @@
       </div>
     {% endif %}
   </div>
+
+  <div class="product-grid-container">
+    <div class="product-grid">
+      {% for i in (1..4) %}
+        {% assign product_setting = 'featured_product_' | append: i %}
+        {% if section.settings[product_setting] != blank %}
+          {% assign product = all_products[section.settings[product_setting]] %}
+          <a href="{{ product.url }}" class="product-grid-item">
+            <div class="product-grid-image">
+              {{ product.featured_image | image_url: width: 300 | image_tag }}
+            </div>
+            <h4 class="product-grid-name">{{ product.title }}</h4>
+            {% if product.handle != blank %}
+              <p class="product-grid-series">{{ product.handle }}</p>
+            {% endif %}
+            <div class="product-grid-price">
+              {{ product.price | money }}
+              {% if product.compare_at_price > product.price %}
+                <span class="compare-price">{{ product.compare_at_price | money }}</span>
+              {% endif %}
+            </div>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
 </div>
 
 <style>
   .featured-product-container {
     margin-bottom: 50px;
+    margin-top: 30px;
   }
 
   .featured-product {
     display: flex;
-    gap: 40px;
+    gap: 60px;
     align-items: center;
+    max-height: 400px;
+    overflow: hidden;
   }
 
   .featured-product-image {
     flex: 1;
+    max-height: 400px;
+    display: flex;
+    align-items: center;
   }
 
   .featured-product-image img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    max-height: 400px;
+    object-fit: contain;
     border-radius: 8px;
   }
 
   .featured-product-info {
-    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product-name {
+    width: 100%;
+    font-size: 2rem;
+    margin-bottom: 10px;
   }
 
   .product-series {
+    width: 100%;
     color: #666;
     font-size: 1.2rem;
     margin: 10px 0;
@@ -78,7 +120,7 @@
     margin-left: 10px;
   }
 
-  .button {
+  .senses-section .button {
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     padding: 12px 24px;
@@ -95,6 +137,55 @@
   .product-grid-container {
     margin-top: 40px;
   }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .product-grid-item {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease;
+  }
+
+  .product-grid-item:hover {
+    transform: translateY(-5px);
+  }
+
+  .product-grid-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+
+  .product-grid-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .product-grid-name {
+    font-size: 1.1rem;
+    margin: 5px 0;
+  }
+
+  .product-grid-series {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 5px 0;
+  }
+
+  .product-grid-price {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 5px 0;
+  }
 </style>
 
 {% schema %}
@@ -105,6 +196,26 @@
       "type": "product",
       "id": "featured_product",
       "label": "Featured Product"
+    },
+    {
+      "type": "product",
+      "id": "featured_product_1",
+      "label": "Featured Product 1"
+    },
+    {
+      "type": "product",
+      "id": "featured_product_2",
+      "label": "Featured Product 2"
+    },
+    {
+      "type": "product",
+      "id": "featured_product_3",
+      "label": "Featured Product 3"
+    },
+    {
+      "type": "product",
+      "id": "featured_product_4",
+      "label": "Featured Product 4"
     }
   ],
   "presets": [
