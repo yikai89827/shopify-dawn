@@ -6,17 +6,73 @@
 -%}
 
 <div class="about-section">
-  <h2 class="section-heading">{{ heading }}</h2>
-  <div class="brand-blurb">
-    {{ blurb }}
+  <div class="about-container">
+    <div class="about-content">
+      <h2 class="section-heading">{{ heading }}</h2>
+      <div class="brand-blurb">
+        {{ blurb }}
+      </div>
+      <a href="{{ cta_link }}" class="button">{{ cta_text }}</a>
+    </div>
+    {% if section.settings.brand_image != blank %}
+      <div class="brand-image">
+        {{ section.settings.brand_image | image_url: width: 800 | image_tag }}
+      </div>
+    {% endif %}
   </div>
-  <a href="{{ cta_link }}" class="button">{{ cta_text }}</a>
 </div>
+
+<style>
+  .about-container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+  }
+
+  .about-content {
+    flex: 5;
+  }
+
+  .brand-image {
+    flex: 3;
+    position: sticky;
+    top: 20px;
+  }
+
+  .brand-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  @media screen and (max-width: 768px) {
+    .about-container {
+      flex-direction: column;
+    }
+
+    .about-content,
+    .brand-image {
+      flex: 1 1 100%;
+      width: 100%;
+    }
+
+    .brand-image {
+      margin-top: 30px;
+      position: static;
+    }
+  }
+</style>
 
 {% schema %}
 {
   "name": "About Preview",
   "settings": [
+    {
+      "type": "image_picker",
+      "id": "brand_image",
+      "label": "品牌宣传图"
+    },
     {
       "type": "text",
       "id": "heading",
