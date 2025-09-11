@@ -7,16 +7,64 @@
 -%}
 
 <div class="community-section">
-  {% if background != blank %}
-    {{ background | image_url: width: 2000 | image_tag: class: 'community-bg' }}
-  {% endif %}
+  <h2 class="section-heading">{{ heading }}</h2>
 
-  <div class="community-content">
-    <h2 class="section-heading">{{ heading }}</h2>
-    <p class="slogan">{{ slogan }}</p>
-    <a href="{{ cta_link }}" class="button">{{ cta_text }}</a>
-  </div>
+  {% if background != blank %}
+    <div class="community-bg-container">
+      {{ background | image_url: width: 2000 | image_tag: class: 'community-bg' }}
+      <div class="slogan-container">
+        <p class="slogan">{{ slogan }}</p>
+      </div>
+      <div class="button-container">
+        <a href="{{ cta_link }}" class="button">{{ cta_text }}</a>
+      </div>
+    </div>
+  {% endif %}
 </div>
+
+<style>
+  .community-section {
+    position: relative;
+    text-align: center;
+  }
+
+  .community-bg-container {
+    position: relative;
+    margin: 20px 0;
+  }
+
+  .community-bg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .slogan-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .slogan {
+    color: white;
+    font-size: 2rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  .button-container {
+    margin-top: 20px;
+    padding-bottom: 30px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .slogan {
+      font-size: 1.5rem;
+    }
+  }
+</style>
 
 {% schema %}
 {
