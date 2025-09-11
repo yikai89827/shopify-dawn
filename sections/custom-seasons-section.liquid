@@ -8,15 +8,29 @@
 <div class="seasons-section">
   <h2 class="section-heading">{{ heading }}</h2>
 
-  <div class="reflections-carousel">
-    {% for i in (1..5) %}
-      {% assign reflection = 'reflection_' | append: i %}
-      {% if section.settings[reflection] != blank %}
-        <div class="reflection-item">
-          {{ section.settings[reflection] }}
+  <div class="seasons-container">
+    <div class="reflections-list">
+      {% for i in (1..5) %}
+        {% assign reflection = 'reflection_' | append: i %}
+        {% assign reflection_link = 'reflection_link_' | append: i %}
+        {% if section.settings[reflection] != blank %}
+          <a href="{{ section.settings[reflection_link] }}" class="reflection-item">
+            {{ section.settings[reflection] }}
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="featured-image">
+      {% if section.settings.image != blank %}
+        <div class="image-wrapper">
+          {{ section.settings.image | image_url: width: 800 | image_tag: class: 'featured-img' }}
+          <div class="image-overlay">
+            <h3>{{ heading }}</h3>
+          </div>
         </div>
       {% endif %}
-    {% endfor %}
+    </div>
   </div>
 
   <div class="featured-entry">
@@ -26,6 +40,78 @@
 
   <a href="{{ cta_link }}" class="button">{{ cta_text }}</a>
 </div>
+
+<style>
+  .seasons-container {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+
+  .reflections-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .reflection-item {
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .reflection-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(5px);
+  }
+
+  .featured-image {
+    flex: 1;
+    position: relative;
+  }
+
+  .image-wrapper {
+    position: relative;
+    height: 100%;
+  }
+
+  .featured-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+
+  .image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .image-overlay h3 {
+    font-size: 2rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  @media (max-width: 768px) {
+    .seasons-container {
+      flex-direction: column;
+    }
+  }
+</style>
 
 {% schema %}
 {
@@ -77,6 +163,36 @@
       "type": "textarea",
       "id": "reflection_5",
       "label": "每日反思5"
+    },
+    {
+      "type": "url",
+      "id": "reflection_link_1",
+      "label": "每日反思1链接"
+    },
+    {
+      "type": "url",
+      "id": "reflection_link_2",
+      "label": "每日反思2链接"
+    },
+    {
+      "type": "url",
+      "id": "reflection_link_3",
+      "label": "每日反思3链接"
+    },
+    {
+      "type": "url",
+      "id": "reflection_link_4",
+      "label": "每日反思4链接"
+    },
+    {
+      "type": "url",
+      "id": "reflection_link_5",
+      "label": "每日反思5链接"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "右侧图片"
     }
   ],
   "presets": [
