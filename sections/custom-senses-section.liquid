@@ -5,7 +5,7 @@
   assign featured_product = section.settings.featured_product
 -%}
 <div class="senses-section">
-  <h2 class="section-heading">{{ heading }}</h2>
+  <h3 class="section-heading">{{ heading }}</h3>
   <div class="featured-product-container">
     {% if section.settings.featured_product != blank %}
       {% assign product = all_products[section.settings.featured_product] %}

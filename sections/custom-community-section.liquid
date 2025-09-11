@@ -7,7 +7,7 @@
 -%}
 
 <div class="community-section">
-  <h2 class="section-heading">{{ heading }}</h2>
+  <h3 class="section-heading">{{ heading }}</h3>
 
   {% if background != blank %}
     <div class="community-bg-container">
@@ -31,9 +31,8 @@
   .community-bg-container {
     position: relative;
     margin: 20px 0;
-  }
-
-  .community-bg {
+    max-height: 400px;
+    overflow: hidden;
     width: 100%;
     height: auto;
     display: block;
