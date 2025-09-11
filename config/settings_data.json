@@ -100,9 +100,7 @@
       "custom-senses-section": {
         "type": "custom-senses-section",
         "settings": {
-          "heading": "感官预览",
-          "cta_text": "选购所有感官",
-          "cta_link": ""
+          "featured_product": "mu-the-potpourri-pouch"
         }
       },
       "custom-rituals-section": {
