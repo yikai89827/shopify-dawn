@@ -64,6 +64,67 @@
     "variant_swatch_radius": 0,
     "variant_button_radius": 0,
     "variant_button_width": "default-width-buttons",
+    "sections": {
+      "custom-hero-section": {
+        "type": "custom-hero-section",
+        "settings": {
+          "image": "shopify://shop_images/dqs_2025-08-07_163949.038.jpg",
+          "heading": "The Turning of Light",
+          "cta_text": "Explore This Season",
+          "cta_link": "shopify://blogs/news/starting-within-without-a-return-to-roots"
+        }
+      },
+      "custom-seasons-section": {
+        "type": "custom-seasons-section",
+        "settings": {
+          "heading": "季节预览",
+          "cta_text": "阅读所有反思",
+          "cta_link": "",
+          "featured_entry": "",
+          "reflection_1": "",
+          "reflection_2": "",
+          "reflection_3": "",
+          "reflection_4": "",
+          "reflection_5": ""
+        }
+      },
+      "custom-senses-section": {
+        "type": "custom-senses-section",
+        "settings": {
+          "heading": "感官预览",
+          "cta_text": "选购所有感官",
+          "cta_link": ""
+        }
+      },
+      "custom-rituals-section": {
+        "type": "custom-rituals-section",
+        "settings": {
+          "heading": "仪式预览",
+          "cta_text": "探索仪式",
+          "cta_link": "",
+          "featured_ritual": "",
+          "library_teaser": ""
+        }
+      },
+      "custom-community-section": {
+        "type": "custom-community-section",
+        "settings": {
+          "heading": "社区预览",
+          "slogan": "基于我们共享的",
+          "cta_text": "汇聚社群",
+          "cta_link": ""
+        }
+      },
+      "custom-about-section": {
+        "type": "custom-about-section",
+        "settings": {
+          "heading": "关于预览",
+          "blurb": "",
+          "cta_text": "我们的故事",
+          "cta_link": ""
+        }
+      }
+    },
     "content_for_index": [],
     "color_schemes": {
       "scheme-1": {
