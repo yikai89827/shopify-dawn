@@ -100,7 +100,11 @@
       "custom-senses-section": {
         "type": "custom-senses-section",
         "settings": {
-          "featured_product": "mu-the-potpourri-pouch"
+          "featured_product": "mu-the-potpourri-pouch",
+          "featured_product_1": "xi-the-potpourri-pouch",
+          "featured_product_2": "rui-the-potpourri-pouch",
+          "featured_product_3": "ying-the-potpourri-pouch",
+          "featured_product_4": "ji-the-potpourri-pouch"
         }
       },
       "custom-rituals-section": {
