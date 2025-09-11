@@ -77,15 +77,24 @@
       "custom-seasons-section": {
         "type": "custom-seasons-section",
         "settings": {
-          "heading": "季节预览",
-          "cta_text": "阅读所有反思",
-          "cta_link": "",
-          "featured_entry": "",
-          "reflection_1": "",
-          "reflection_2": "",
-          "reflection_3": "",
-          "reflection_4": "",
-          "reflection_5": ""
+          "heading": "Seasons Preview",
+          "cta_text": "Read All Reflections",
+          "cta_link": "https://substack.com/@amidwesterndoctor?utm_source=%2Fhome%2Fcategory%2F76741&utm_medium=reader2",
+          "reflection_1": "remarkable therapies lost to time for the health of humanity？",
+          "reflection_2": "how far the FDA went to bury it？",
+          "reflection_3": "water actually is the best for the body and restoring your vitality.",
+          "reflection_4": "validated the thousands of consistent shedding reports I’ve evaluated",
+          "reflection_5": "response to these toxic issues after which disease follows.",
+          "reflection_link_1": "https://substack.com/@amidwesterndoctor?utm_source=%2Fhome%2Fcategory%2F76741&utm_medium=reader2",
+          "reflection_link_2": "shopify://blogs/news/starting-within-without-a-return-to-roots",
+          "reflection_link_3": "shopify://blogs/news/starting-within-without-a-return-to-roots",
+          "reflection_link_4": "shopify://blogs/news/starting-within-without-a-return-to-roots",
+          "reflection_link_5": "shopify://blogs/news/starting-within-without-a-return-to-roots",
+          "image_1": "shopify://shop_images/DSC07219.jpg",
+          "image_2": "shopify://shop_images/a_nourishing_ritual_for_every_season.png",
+          "image_3": "shopify://shop_images/DSC05906.jpg",
+          "image_4": "shopify://shop_images/F03A386F-6543-4350-A8C3-0242D3EFC975.jpg",
+          "image_5": "shopify://shop_images/166E89EA-758A-49F9-BDDE-D08B1D05E9D7.jpg"
         }
       },
       "custom-senses-section": {
