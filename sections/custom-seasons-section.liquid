@@ -1,0 +1,88 @@
+{%- liquid
+  assign heading = section.settings.heading
+  assign cta_text = section.settings.cta_text
+  assign cta_link = section.settings.cta_link
+  assign featured_entry = section.settings.featured_entry
+-%}
+
+<div class="seasons-section">
+  <h2 class="section-heading">{{ heading }}</h2>
+
+  <div class="reflections-carousel">
+    {% for i in (1..5) %}
+      {% assign reflection = 'reflection_' | append: i %}
+      {% if section.settings[reflection] != blank %}
+        <div class="reflection-item">
+          {{ section.settings[reflection] }}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="featured-entry">
+    <h3>精选期刊</h3>
+    <p>{{ featured_entry }}</p>
+  </div>
+
+  <a href="{{ cta_link }}" class="button">{{ cta_text }}</a>
+</div>
+
+{% schema %}
+{
+  "name": "季节预览",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "区块标题",
+      "default": "季节预览"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "按钮文字",
+      "default": "阅读所有反思"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "按钮链接"
+    },
+    {
+      "type": "textarea",
+      "id": "featured_entry",
+      "label": "精选期刊内容"
+    },
+    {
+      "type": "textarea",
+      "id": "reflection_1",
+      "label": "每日反思1"
+    },
+    {
+      "type": "textarea",
+      "id": "reflection_2",
+      "label": "每日反思2"
+    },
+    {
+      "type": "textarea",
+      "id": "reflection_3",
+      "label": "每日反思3"
+    },
+    {
+      "type": "textarea",
+      "id": "reflection_4",
+      "label": "每日反思4"
+    },
+    {
+      "type": "textarea",
+      "id": "reflection_5",
+      "label": "每日反思5"
+    }
+  ],
+  "presets": [
+    {
+      "name": "季节预览"
+    }
+  ]
+}
+{% endschema %}

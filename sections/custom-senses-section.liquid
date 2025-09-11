@@ -1,0 +1,84 @@
+{%- liquid
+  assign heading = section.settings.heading
+  assign cta_text = section.settings.cta_text
+  assign cta_link = section.settings.cta_link
+  assign featured_product = section.settings.featured_product
+-%}
+
+<div class="senses-section">
+  <h2 class="section-heading">{{ heading }}</h2>
+
+  <div class="featured-pouch">
+    {% if featured_product != blank %}
+      {{ featured_product | image_url: width: 400 | image_tag: class: 'pouch-image' }}
+    {% endif %}
+  </div>
+
+  <div class="product-grid">
+    {% for i in (1..4) %}
+      {% assign product = 'product_' | append: i %}
+      {% if section.settings[product] != blank %}
+        <div class="grid-item">
+          {{ section.settings[product] | image_url: width: 200 | image_tag }}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <a href="{{ cta_link }}" class="button">{{ cta_text }}</a>
+</div>
+
+{% schema %}
+{
+  "name": "感官预览",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "区块标题",
+      "default": "感官预览"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "按钮文字",
+      "default": "选购所有感官"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "按钮链接"
+    },
+    {
+      "type": "image_picker",
+      "id": "featured_product",
+      "label": "特色产品图片"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_1",
+      "label": "产品1"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_2",
+      "label": "产品2"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_3",
+      "label": "产品3"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_4",
+      "label": "产品4"
+    }
+  ],
+  "presets": [
+    {
+      "name": "感官预览"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,60 @@
+{%- liquid
+  assign heading = section.settings.heading
+  assign slogan = section.settings.slogan
+  assign cta_text = section.settings.cta_text
+  assign cta_link = section.settings.cta_link
+  assign background = section.settings.background
+-%}
+
+<div class="community-section">
+  {% if background != blank %}
+    {{ background | image_url: width: 2000 | image_tag: class: 'community-bg' }}
+  {% endif %}
+
+  <div class="community-content">
+    <h2 class="section-heading">{{ heading }}</h2>
+    <p class="slogan">{{ slogan }}</p>
+    <a href="{{ cta_link }}" class="button">{{ cta_text }}</a>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "社区预览",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "区块标题",
+      "default": "社区预览"
+    },
+    {
+      "type": "text",
+      "id": "slogan",
+      "label": "标语",
+      "default": "基于我们共享的"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "按钮文字",
+      "default": "汇聚社群"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "按钮链接"
+    },
+    {
+      "type": "image_picker",
+      "id": "background",
+      "label": "背景图片"
+    }
+  ],
+  "presets": [
+    {
+      "name": "社区预览"
+    }
+  ]
+}
+{% endschema %}
