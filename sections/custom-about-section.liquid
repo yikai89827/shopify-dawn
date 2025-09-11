@@ -27,6 +27,8 @@
     display: flex;
     gap: 40px;
     align-items: flex-start;
+    max-height: 400px;
+    overflow: auto;
   }
 
   .about-content {
@@ -42,6 +44,8 @@
   .brand-image img {
     width: 100%;
     height: auto;
+    max-height: 380px;
+    object-fit: contain;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
@@ -70,7 +74,9 @@
     border: 1px solid #ddd;
     border-radius: 4px;
     text-decoration: none;
-    display: inline-block;
+    display: block;
+    margin: 20px auto 0;
+    width: fit-content;
     transition: all 0.3s ease;
   }
 
