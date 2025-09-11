@@ -22,14 +22,17 @@
     </div>
 
     <div class="featured-image">
-      {% if section.settings.image != blank %}
-        <div class="image-wrapper">
-          {{ section.settings.image | image_url: width: 800 | image_tag: class: 'featured-img' }}
-          <div class="image-overlay">
-            <h3>{{ heading }}</h3>
+      {% for i in (1..5) %}
+        {% assign image = 'image_' | append: i %}
+        {% if section.settings[image] != blank %}
+          <div class="image-wrapper {% if forloop.first %}active{% endif %}" data-index="{{ forloop.index0 }}">
+            {{ section.settings[image] | image_url: width: 800 | image_tag: class: 'featured-img' }}
+            <div class="image-overlay">
+              <h3>{{ heading }}</h3>
+            </div>
           </div>
-        </div>
-      {% endif %}
+        {% endif %}
+      {% endfor %}
     </div>
   </div>
 
@@ -111,7 +114,64 @@
       flex-direction: column;
     }
   }
+
+  .image-wrapper {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  .image-wrapper.active {
+    display: block;
+    opacity: 1;
+  }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const reflectionItems = document.querySelectorAll('.reflection-item');
+    const imageWrappers = document.querySelectorAll('.image-wrapper');
+    let currentIndex = 0;
+    let interval;
+
+    // 切换图片函数
+    function showImage(index) {
+      imageWrappers.forEach((wrapper) => wrapper.classList.remove('active'));
+      imageWrappers[index].classList.add('active');
+      currentIndex = index;
+    }
+
+    // 定时切换
+    function startCarousel() {
+      interval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % imageWrappers.length;
+        showImage(currentIndex);
+      }, 5000);
+    }
+
+    // 初始化
+    if (imageWrappers.length > 0) {
+      showImage(0);
+      startCarousel();
+
+      // hover切换
+      reflectionItems.forEach((item, index) => {
+        item.addEventListener('mouseenter', () => {
+          clearInterval(interval);
+          showImage(index);
+        });
+        item.addEventListener('mouseleave', () => {
+          startCarousel();
+        });
+      });
+    }
+  });
+</script>
 
 {% schema %}
 {
@@ -191,8 +251,28 @@
     },
     {
       "type": "image_picker",
-      "id": "image",
-      "label": "右侧图片"
+      "id": "image_1",
+      "label": "反思1对应图片"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "反思2对应图片"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "反思3对应图片"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_4",
+      "label": "反思4对应图片"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_5",
+      "label": "反思5对应图片"
     }
   ],
   "presets": [
