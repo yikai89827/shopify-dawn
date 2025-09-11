@@ -53,6 +53,13 @@
         {% endif %}
       {% endfor %}
     </div>
+    {% if section.settings.shop_all_text != blank and section.settings.shop_all_link != blank %}
+      <div class="shop-all-button-container">
+        <a href="{{ section.settings.shop_all_link }}" class="button">
+          {{ section.settings.shop_all_text }}
+        </a>
+      </div>
+    {% endif %}
   </div>
 </div>
 
@@ -186,6 +193,12 @@
     font-weight: bold;
     margin: 5px 0;
   }
+
+  .shop-all-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
 </style>
 
 {% schema %}
@@ -216,6 +229,17 @@
       "type": "product",
       "id": "featured_product_4",
       "label": "Featured Product 4"
+    },
+    {
+      "type": "text",
+      "id": "shop_all_text",
+      "label": "Shop All Button Text",
+      "default": "Shop All Senses"
+    },
+    {
+      "type": "url",
+      "id": "shop_all_link",
+      "label": "Shop All Button Link"
     }
   ],
   "presets": [
