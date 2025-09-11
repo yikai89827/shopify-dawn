@@ -43,7 +43,11 @@
   .seasons-container {
     display: flex;
     gap: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+  }
+
+  h2.section-heading {
+    margin-block-start: 30px;
   }
 
   .reflections-list {
@@ -69,7 +73,7 @@
 
   .reflection-item.active {
     background: rgba(255, 255, 255, 0.3);
-    border-left: 3px solid white;
+    border-left: 3px solid rgba(0, 255, 255, 0.5);
     font-weight: bold;
   }
 
@@ -110,6 +114,17 @@
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   }
 
+  .image-overlay a.button {
+    background: transparent !important;
+    border: 1px solid #fff !important;
+    font-weight: bold;
+  }
+
+  .image-overlay a.button:hover {
+    background: rgba(0, 0, 0, 0.5) !important;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+
   @media (max-width: 768px) {
     .seasons-container {
       flex-direction: column;
@@ -144,6 +159,8 @@
     function showImage(index) {
       imageWrappers.forEach((wrapper) => wrapper.classList.remove('active'));
       imageWrappers[index].classList.add('active');
+      reflectionItems.forEach((item) => item.classList.remove('active'));
+      reflectionItems[index].classList.add('active');
       currentIndex = index;
     }
 
