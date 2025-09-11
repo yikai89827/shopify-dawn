@@ -55,8 +55,21 @@
   }
 
   .button-container {
-    margin-top: 20px;
-    padding-bottom: 30px;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .button-container .button {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 10px 20px;
+    text-decoration: none;
+  }
+  .button-container .button:hover {
+    background: white;
+    color: black;
   }
 
   @media screen and (max-width: 768px) {
