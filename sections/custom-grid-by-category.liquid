@@ -97,7 +97,7 @@
   .category-title {
     margin-top: 10px;
     text-align: center;
-    font-weight: 600;
+    font-weight: 400;
   }
 
   @media screen and (max-width: 749px) {
@@ -121,7 +121,7 @@
             height="{{ 600 | divided_by: block.settings.image.aspect_ratio | round }}"
           >
         {%- endif -%}
-        <h3 class="category-title">{{ block.settings.title }}</h3>
+        <p class="category-title">{{ block.settings.title }}</p>
       </a>
     </div>
   {%- endfor -%}
