@@ -21,6 +21,12 @@
       "default": 5
     },
     {
+      "type": "checkbox",
+      "id": "enable_scroll",
+      "label": "启用滚动效果",
+      "default": true
+    },
+    {
       "type": "range",
       "id": "gap",
       "min": 0,
@@ -101,7 +107,9 @@
   .marquee-track {
     display: flex;
     gap: {{ section.settings.gap }}px;
-    animation: scroll {{ section.settings.speed }}s linear infinite;
+    {% if section.settings.enable_scroll %}
+      animation: scroll {{ section.settings.speed }}s linear infinite;
+    {% endif %}
   }
 
   .marquee-item {
@@ -196,19 +204,20 @@
   document.addEventListener('DOMContentLoaded', function () {
     const track = document.querySelector('.marquee-track');
     const items = document.querySelectorAll('.marquee-item');
-    const itemWidth = items[0].offsetWidth;
     const gap = parseInt('{{ section.settings.gap }}');
 
-    // 复制items实现无缝滚动
-    track.innerHTML += track.innerHTML;
+    {% if section.settings.enable_scroll %}
+      // 复制items实现无缝滚动
+      track.innerHTML += track.innerHTML;
 
-    // 暂停动画当hover
-    track.addEventListener('mouseenter', () => {
-      track.style.animationPlayState = 'paused';
-    });
+      // 暂停动画当hover
+      track.addEventListener('mouseenter', () => {
+        track.style.animationPlayState = 'paused';
+      });
 
-    track.addEventListener('mouseleave', () => {
-      track.style.animationPlayState = 'running';
-    });
+      track.addEventListener('mouseleave', () => {
+        track.style.animationPlayState = 'running';
+      });
+    {% endif %}
   });
 </script>
