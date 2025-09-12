@@ -118,6 +118,15 @@
         "padding-block-end": 40
       }
     },
+    "custom_table_list_6TFAVA": {
+      "type": "custom-table-list",
+      "name": "表格区块",
+      "settings": {
+        "table_content": "<p>Elevate your Events with Arrestingly Chic Shared Tables.</p>",
+        "show_borders": true,
+        "stripe_rows": true
+      }
+    },
     "custome_image_word_rMpVKK": {
       "type": "custome-image-word",
       "name": "图文区块",
@@ -138,6 +147,19 @@
         "image": "shopify://shop_images/a-woman-in-her-shop.jpg",
         "image_position": "left",
         "text_width": 50
+      }
+    },
+    "custom_title_xeC4CT": {
+      "type": "custom-title",
+      "name": "自定义标题",
+      "settings": {
+        "title": "Affiliates & Friends",
+        "alignment": "left",
+        "color": "#000000",
+        "font_size": 24,
+        "margin_top": 20,
+        "margin_bottom": 20,
+        "font_weight": 700
       }
     },
     "custom_grid_list_GaFPnY": {
@@ -217,8 +239,10 @@
   "order": [
     "main",
     "hero_8MEmGy",
+    "custom_table_list_6TFAVA",
     "custome_image_word_rMpVKK",
     "custome_image_word_M9wEAw",
+    "custom_title_xeC4CT",
     "custom_grid_list_GaFPnY"
   ]
 }
