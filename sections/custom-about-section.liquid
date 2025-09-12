@@ -53,17 +53,32 @@
   @media screen and (max-width: 768px) {
     .about-container {
       flex-direction: column;
-    }
-
-    .about-content,
-    .brand-image {
-      flex: 1 1 100%;
-      width: 100%;
+      max-height: none;
     }
 
     .brand-image {
-      margin-top: 30px;
-      position: static;
+      order: -1;
+      margin-bottom: 30px;
+      margin-top: 0;
+    }
+
+    .about-content {
+      padding: 0 15px;
+    }
+
+    .brand-image img {
+      max-height: 300px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .brand-image img {
+      max-height: 250px;
+    }
+
+    .about-section .button {
+      padding: 10px 20px;
+      font-size: 0.9rem;
     }
   }
 
