@@ -5,7 +5,7 @@
 
 {% schema %}
 {
-  "name": "分类网格",
+  "name": "grid-by-category",
   "tag": "section",
   "class": "section",
   "settings": [
@@ -91,13 +91,23 @@
     width: 100%;
     height: auto;
     display: block;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
   }
 
   .category-title {
     margin-top: 10px;
     text-align: center;
     font-weight: 400;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+
+  .category-link:hover .category-image {
+    transform: scale(1.05);
+  }
+
+  .category-link:hover .category-title {
+    color: var(--color-button);
   }
 
   @media screen and (max-width: 749px) {
