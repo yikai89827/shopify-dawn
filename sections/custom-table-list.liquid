@@ -1,0 +1,78 @@
+{% schema %}
+{
+  "name": "表格区块",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "table_content",
+      "label": "表格内容",
+      "default": "<p>使用工具栏的表格按钮插入表格</p>",
+      "info": "点击编辑器工具栏的表格图标插入表格"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_borders",
+      "label": "显示表格边框",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "stripe_rows",
+      "label": "斑马纹行",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "表格区块"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .table-container {
+    overflow-x: auto;
+    margin: 20px 0;
+  }
+
+  .table-container table {
+    width: 100%;
+    {% if section.settings.show_borders %}
+      border-collapse: collapse;
+      border: 1px solid #ddd;
+    {% else %}
+      border: none;
+    {% endif %}
+  }
+
+  .table-container th,
+  .table-container td {
+    {% if section.settings.show_borders %}
+      border: 1px solid #ddd;
+    {% endif %}
+    padding: 12px;
+    text-align: left;
+  }
+
+  .table-container th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+
+  {% if section.settings.stripe_rows %}
+    .table-container tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+  {% endif %}
+
+  .table-container tr:hover {
+    background-color: #f1f1f1;
+  }
+</style>
+
+<div class="table-container">
+  {{ section.settings.table_content }}
+</div>
