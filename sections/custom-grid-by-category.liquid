@@ -1,0 +1,128 @@
+{%- liquid
+  assign grid_columns = 4
+  assign grid_gap = section.settings.grid_gap
+-%}
+
+{% schema %}
+{
+  "name": "分类网格",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "range",
+      "id": "grid_gap",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "网格间距",
+      "default": 16
+    }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "分类",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "图片"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "分类名称",
+          "default": "分类名称"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "链接"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "分类网格",
+      "blocks": [
+        {
+          "type": "category"
+        },
+        {
+          "type": "category"
+        },
+        {
+          "type": "category"
+        },
+        {
+          "type": "category"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4
+}
+{% endschema %}
+
+<style>
+  .category-grid {
+    display: grid;
+    grid-template-columns: repeat({{ grid_columns }}, 1fr);
+    gap: {{ grid_gap }}px;
+    padding: 20px 0;
+  }
+
+  .category-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  .category-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .category-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .category-title {
+    margin-top: 10px;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  @media screen and (max-width: 749px) {
+    .category-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>
+
+<div class="category-grid">
+  {%- for block in section.blocks -%}
+    <div class="category-item" {{ block.shopify_attributes }}>
+      <a href="{{ block.settings.link }}" class="category-link">
+        {%- if block.settings.image != blank -%}
+          <img
+            src="{{ block.settings.image | img_url: '600x' }}"
+            alt="{{ block.settings.title | escape }}"
+            class="category-image"
+            loading="lazy"
+            width="600"
+            height="{{ 600 | divided_by: block.settings.image.aspect_ratio | round }}"
+          >
+        {%- endif -%}
+        <h3 class="category-title">{{ block.settings.title }}</h3>
+      </a>
+    </div>
+  {%- endfor -%}
+</div>
