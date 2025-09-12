@@ -13,7 +13,7 @@
       "type": "text",
       "id": "heading",
       "label": "区块标题",
-      "default": "grid by category"
+      "default": "category"
     },
     {
       "type": "range",
@@ -74,6 +74,9 @@
 {% endschema %}
 
 <style>
+  .shopify-section.section {
+    background-color: #fff;
+  }
   .section-header {
     text-align: left;
     margin-bottom: 20px;
@@ -118,7 +121,7 @@
     font-weight: 400;
     font-size: 16px;
     transition: color 0.3s ease;
-    margin-block-start: 15px;
+    margin-block-start: 15px!important;
   }
 
   .category-link:hover .category-image {
