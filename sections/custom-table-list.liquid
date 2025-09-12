@@ -3,28 +3,8 @@
   "name": "表格区块",
   "tag": "section",
   "class": "section",
+  "max_blocks": 20,
   "settings": [
-    {
-      "type": "text",
-      "id": "table_json",
-      "label": "表格数据(JSON格式)",
-      "default": "{\"headers\":[\"标题1\",\"标题2\"],\"rows\":[[{\"text\":\"内容1\"},{\"text\":\"内容2\",\"link\":\"#\"}]]}",
-      "info": "使用JSON格式定义表格，支持单元格文本和链接"
-    },
-    {
-      "type": "number",
-      "id": "columns",
-      "label": "列数",
-      "default": 2,
-      "info": "建议1-10列"
-    },
-    {
-      "type": "number",
-      "id": "rows",
-      "label": "行数",
-      "default": 1,
-      "info": "建议1-50行"
-    },
     {
       "type": "checkbox",
       "id": "show_borders",
@@ -38,9 +18,86 @@
       "default": true
     }
   ],
+  "blocks": [
+    {
+      "type": "header",
+      "name": "表头",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "col_1",
+          "label": "列1标题",
+          "default": "标题1"
+        },
+        {
+          "type": "text",
+          "id": "col_2",
+          "label": "列2标题",
+          "default": "标题2"
+        },
+        {
+          "type": "text",
+          "id": "col_3",
+          "label": "列3标题",
+          "default": "标题3"
+        }
+      ]
+    },
+    {
+      "type": "row",
+      "name": "表格行",
+      "settings": [
+        {
+          "type": "text",
+          "id": "col_1",
+          "label": "列1内容"
+        },
+        {
+          "type": "text",
+          "id": "col_2",
+          "label": "列2内容"
+        },
+        {
+          "type": "text",
+          "id": "col_3",
+          "label": "列3内容"
+        },
+        {
+          "type": "url",
+          "id": "col_1_link",
+          "label": "列1链接"
+        },
+        {
+          "type": "url",
+          "id": "col_2_link",
+          "label": "列2链接"
+        },
+        {
+          "type": "url",
+          "id": "col_3_link",
+          "label": "列3链接"
+        }
+      ]
+    }
+  ],
   "presets": [
     {
-      "name": "表格区块"
+      "name": "表格区块",
+      "blocks": [
+        {
+          "type": "header"
+        },
+        {
+          "type": "row"
+        },
+        {
+          "type": "row"
+        },
+        {
+          "type": "row"
+        }
+      ]
     }
   ]
 }
@@ -88,48 +145,43 @@
 </style>
 
 <div class="table-container">
-  <div class="json-table-source" style="display:none;">
-    {{ section.settings.table_json | escape }}
-  </div>
-  <div class="rendered-table"></div>
+  <table>
+    {% for block in section.blocks %}
+      {% if block.type == 'header' %}
+        <thead>
+          <tr>
+            <th>{{ block.settings.col_1 }}</th>
+            <th>{{ block.settings.col_2 }}</th>
+            <th>{{ block.settings.col_3 }}</th>
+          </tr>
+        </thead>
+      {% else %}
+        <tbody>
+          <tr>
+            <td>
+              {% if block.settings.col_1_link != blank %}
+                <a href="{{ block.settings.col_1_link }}">{{ block.settings.col_1 }}</a>
+              {% else %}
+                {{ block.settings.col_1 }}
+              {% endif %}
+            </td>
+            <td>
+              {% if block.settings.col_2_link != blank %}
+                <a href="{{ block.settings.col_2_link }}">{{ block.settings.col_2 }}</a>
+              {% else %}
+                {{ block.settings.col_2 }}
+              {% endif %}
+            </td>
+            <td>
+              {% if block.settings.col_3_link != blank %}
+                <a href="{{ block.settings.col_3_link }}">{{ block.settings.col_3 }}</a>
+              {% else %}
+                {{ block.settings.col_3 }}
+              {% endif %}
+            </td>
+          </tr>
+        </tbody>
+      {% endif %}
+    {% endfor %}
+  </table>
 </div>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    try {
-      const jsonSource = document.querySelector('.json-table-source').textContent.trim();
-      const container = document.querySelector('.rendered-table');
-      const tableData = JSON.parse(jsonSource);
-
-      let html = '<table>';
-
-      // 添加表头
-      if (tableData.headers && tableData.headers.length) {
-        html += '<thead><tr>';
-        tableData.headers.forEach((header) => {
-          html += `<th>${header}</th>`;
-        });
-        html += '</tr></thead>';
-      }
-
-      // 添加表格内容
-      html += '<tbody>';
-      if (tableData.rows && tableData.rows.length) {
-        tableData.rows.forEach((row) => {
-          html += '<tr>';
-          row.forEach((cell) => {
-            const content = cell.link ? `<a href="${cell.link}">${cell.text || ''}</a>` : cell.text || '';
-            html += `<td>${content}</td>`;
-          });
-          html += '</tr>';
-        });
-      }
-      html += '</tbody></table>';
-
-      container.innerHTML = html;
-    } catch (e) {
-      console.error('表格数据解析错误:', e);
-      container.innerHTML = '<p>表格数据格式错误，请检查JSON格式</p>';
-    }
-  });
-</script>
