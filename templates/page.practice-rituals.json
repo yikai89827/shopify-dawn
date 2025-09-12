@@ -60,14 +60,15 @@
     "hero_jiUV8G": {
       "type": "hero",
       "blocks": {
-        "text_hzJwM3": {
+        "text_7DDb6g": {
           "type": "text",
+          "name": "t:names.text",
           "settings": {
             "text": "<h3>seasonal grounding text.</h3>",
             "width": "fit-content",
-            "max_width": "narrow",
+            "max_width": "normal",
             "alignment": "left",
-            "type_preset": "h1",
+            "type_preset": "rte",
             "font": "var(--font-body--family)",
             "font_size": "1rem",
             "line_height": "normal",
@@ -87,7 +88,7 @@
         }
       },
       "block_order": [
-        "text_hzJwM3"
+        "text_7DDb6g"
       ],
       "name": "t:names.hero",
       "settings": {
@@ -128,11 +129,98 @@
         "image_position": "right",
         "text_width": 50
       }
+    },
+    "custom_grid_list_DtJYqa": {
+      "type": "custom-grid-list",
+      "blocks": {
+        "item_BXKmY9": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/office-team-business-meeting.jpg",
+            "title": "Ritual-1",
+            "link": ""
+          }
+        },
+        "item_88LW4F": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/busy-hands-playing-with-white-dough.jpg",
+            "title": "Ritual-2",
+            "link": ""
+          }
+        },
+        "item_BBbfM3": {
+          "type": "item",
+          "settings": {
+            "title": "标题",
+            "link": ""
+          }
+        },
+        "item_Tq3AYC": {
+          "type": "item",
+          "settings": {
+            "title": "标题",
+            "link": ""
+          }
+        },
+        "item_FWXpwt": {
+          "type": "item",
+          "settings": {
+            "title": "标题",
+            "link": ""
+          }
+        },
+        "item_rPpWNr": {
+          "type": "item",
+          "settings": {
+            "title": "标题",
+            "link": ""
+          }
+        },
+        "item_qJXFCz": {
+          "type": "item",
+          "settings": {
+            "title": "标题",
+            "link": ""
+          }
+        },
+        "item_pWKqr6": {
+          "type": "item",
+          "settings": {
+            "title": "标题",
+            "link": ""
+          }
+        },
+        "item_wRhaW3": {
+          "type": "item",
+          "settings": {
+            "title": "标题",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_BXKmY9",
+        "item_88LW4F",
+        "item_BBbfM3",
+        "item_Tq3AYC",
+        "item_FWXpwt",
+        "item_rPpWNr",
+        "item_qJXFCz",
+        "item_pWKqr6",
+        "item_wRhaW3"
+      ],
+      "name": "跑马灯网格列表",
+      "settings": {
+        "speed": 10,
+        "gap": 16
+      }
     }
   },
   "order": [
     "main",
     "hero_jiUV8G",
-    "custome_image_word_9KTfYm"
+    "custome_image_word_9KTfYm",
+    "custom_grid_list_DtJYqa"
   ]
 }
