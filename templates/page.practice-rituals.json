@@ -245,6 +245,14 @@
         "enable_scroll": true,
         "gap": 16
       }
+    },
+    "custom_sitemap_Gkcyxq": {
+      "type": "custom-sitemap",
+      "name": "站点地图",
+      "settings": {
+        "title": "Directory / Map.",
+        "menu": "main-menu"
+      }
     }
   },
   "order": [
@@ -252,6 +260,7 @@
     "hero_jiUV8G",
     "custome_image_word_9KTfYm",
     "custom_title_DmhQKj",
-    "custom_grid_list_DtJYqa"
+    "custom_grid_list_DtJYqa",
+    "custom_sitemap_Gkcyxq"
   ]
 }
