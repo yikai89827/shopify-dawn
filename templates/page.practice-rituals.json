@@ -138,6 +138,7 @@
           "settings": {
             "image": "shopify://shop_images/office-team-business-meeting.jpg",
             "title": "Ritual-1",
+            "title_position": "center",
             "link": ""
           }
         },
@@ -146,6 +147,7 @@
           "settings": {
             "image": "shopify://shop_images/busy-hands-playing-with-white-dough.jpg",
             "title": "Ritual-2",
+            "title_position": "center",
             "link": ""
           }
         },
@@ -154,6 +156,7 @@
           "settings": {
             "image": "shopify://shop_images/a-woman-in-her-shop.jpg",
             "title": "Ritual-3",
+            "title_position": "center",
             "link": ""
           }
         },
@@ -162,6 +165,7 @@
           "settings": {
             "image": "shopify://shop_images/person-sits-on-their-couch-next-to-their-dog.jpg",
             "title": "Ritual-4",
+            "title_position": "center",
             "link": ""
           }
         },
@@ -170,6 +174,7 @@
           "settings": {
             "image": "shopify://shop_images/stylish-woman-smiling.jpg",
             "title": "Ritual-5",
+            "title_position": "center",
             "link": ""
           }
         },
@@ -178,6 +183,7 @@
           "settings": {
             "image": "shopify://shop_images/person-enjoys-lunch-alone-in-a-sunlit-restaurant.jpg",
             "title": "Ritual-6",
+            "title_position": "center",
             "link": ""
           }
         },
@@ -186,6 +192,7 @@
           "settings": {
             "image": "shopify://shop_images/person-carries-a-wooden-box-full-of-dough-balls.jpg",
             "title": "Ritual-7",
+            "title_position": "center",
             "link": ""
           }
         },
@@ -194,6 +201,7 @@
           "settings": {
             "image": "shopify://shop_images/person-stands-on-rocks-poking-out-of-the-ocean-shoreline.jpg",
             "title": "Ritual-8",
+            "title_position": "center",
             "link": ""
           }
         },
@@ -202,6 +210,7 @@
           "settings": {
             "image": "shopify://shop_images/6D34FA22-F7E0-49A6-A0EC-5CF52C3DEA70_0c9a90f2-5131-4c9f-826c-244b3f341ae4.jpg",
             "title": "Ritual-9",
+            "title_position": "center",
             "link": ""
           }
         }
@@ -219,7 +228,8 @@
       ],
       "name": "跑马灯网格列表",
       "settings": {
-        "speed": 10,
+        "speed": 20,
+        "enable_scroll": true,
         "gap": 16
       }
     }

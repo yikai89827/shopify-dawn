@@ -139,12 +139,86 @@
         "image_position": "left",
         "text_width": 50
       }
+    },
+    "custom_grid_list_GaFPnY": {
+      "type": "custom-grid-list",
+      "blocks": {
+        "item_RxjQ6y": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/office-team-business-meeting.jpg",
+            "title": "partner-1",
+            "title_position": "center",
+            "link": ""
+          }
+        },
+        "item_E7PXXc": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/busy-hands-playing-with-white-dough.jpg",
+            "title": "partner2",
+            "title_position": "center",
+            "link": ""
+          }
+        },
+        "item_9ECwVC": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/a-woman-in-her-shop.jpg",
+            "title": "partner-3",
+            "title_position": "center",
+            "link": ""
+          }
+        },
+        "item_pTkeq9": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/person-sits-on-their-couch-next-to-their-dog.jpg",
+            "title": "partner-4",
+            "title_position": "center",
+            "link": ""
+          }
+        },
+        "item_Y8GBEi": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/stylish-woman-smiling.jpg",
+            "title": "partner-5",
+            "title_position": "center",
+            "link": ""
+          }
+        },
+        "item_F488R3": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/person-carries-a-wooden-box-full-of-dough-balls.jpg",
+            "title": "partner-6",
+            "title_position": "center",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_RxjQ6y",
+        "item_E7PXXc",
+        "item_9ECwVC",
+        "item_pTkeq9",
+        "item_Y8GBEi",
+        "item_F488R3"
+      ],
+      "name": "跑马灯网格列表",
+      "settings": {
+        "speed": 36,
+        "enable_scroll": true,
+        "gap": 16
+      }
     }
   },
   "order": [
     "main",
     "hero_8MEmGy",
     "custome_image_word_rMpVKK",
-    "custome_image_word_M9wEAw"
+    "custome_image_word_M9wEAw",
+    "custom_grid_list_GaFPnY"
   ]
 }
