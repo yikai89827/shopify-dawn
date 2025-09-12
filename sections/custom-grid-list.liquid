@@ -54,6 +54,26 @@
           "default": "标题"
         },
         {
+          "type": "select",
+          "id": "title_position",
+          "label": "标题位置",
+          "options": [
+            {
+              "value": "left",
+              "label": "底部居左"
+            },
+            {
+              "value": "center",
+              "label": "底部居中"
+            },
+            {
+              "value": "right",
+              "label": "底部居右"
+            }
+          ],
+          "default": "center"
+        },
+        {
           "type": "url",
           "id": "link",
           "label": "链接"
@@ -135,7 +155,6 @@
 
   .marquee-title {
     position: absolute;
-    right: 10px;
     bottom: 10px;
     color: white;
     padding: 5px 10px;
@@ -143,6 +162,28 @@
     text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
     background-color: rgba(0,0,0,0.3);
     border-radius: 4px;
+    white-space: normal;
+    word-wrap: break-word;
+    max-width: 90%;
+  }
+
+  .marquee-title[data-position="left"] {
+    left: 10px;
+    right: auto;
+    text-align: left;
+  }
+
+  .marquee-title[data-position="center"] {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+
+  .marquee-title[data-position="right"] {
+    right: 10px;
+    left: auto;
+    text-align: right;
   }
 
   @keyframes scroll {
@@ -176,7 +217,9 @@
               height="{{ 400 | divided_by: block.settings.image.aspect_ratio | round }}"
             >
           {%- endif -%}
-          <div class="marquee-title">{{ block.settings.title }}</div>
+          <div class="marquee-title" data-position="{{ block.settings.title_position | default: 'center' }}">
+            {{ block.settings.title }}
+          </div>
         </a>
       </div>
     {%- endfor -%}
