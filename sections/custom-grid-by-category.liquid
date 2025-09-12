@@ -75,12 +75,12 @@
 
 <style>
   .section-header {
-    text-align: center;
+    text-align: left;
     margin-bottom: 20px;
   }
 
   .section-heading {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 600;
     margin: 0;
   }
@@ -96,6 +96,7 @@
     position: relative;
     overflow: hidden;
     border-radius: 8px;
+    background-color: #fff;
   }
 
   .category-link {
@@ -112,11 +113,12 @@
   }
 
   .category-title {
-    margin-top: 10px;
+    margin-top: 20px;
     text-align: center;
     font-weight: 400;
     font-size: 16px;
     transition: color 0.3s ease;
+    margin-block-start: 15px;
   }
 
   .category-link:hover .category-image {
@@ -135,7 +137,7 @@
 </style>
 
 <div class="section-header">
-  <h2 class="section-heading">{{ section.settings.heading }}</h2>
+  <h2 class="">{{ section.settings.heading }}</h2>
 </div>
 
 <div class="category-grid">
