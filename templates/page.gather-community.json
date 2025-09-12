@@ -118,13 +118,137 @@
         "padding-block-end": 40
       }
     },
-    "custom_table_list_6TFAVA": {
+    "custom_title_H8ig48": {
+      "type": "custom-title",
+      "name": "自定义标题",
+      "settings": {
+        "title": "Shared Table",
+        "alignment": "center",
+        "color": "#000000",
+        "font_size": 24,
+        "margin_top": 20,
+        "margin_bottom": 20,
+        "font_weight": 700
+      }
+    },
+    "custom_table_list_gXyXVz": {
       "type": "custom-table-list",
+      "blocks": {
+        "header_RGDrFq": {
+          "type": "header",
+          "settings": {
+            "col_1": "Date",
+            "col_2": "Address",
+            "col_3": "events",
+            "col_4": "标题4",
+            "col_5": "标题5",
+            "col_6": "标题6",
+            "col_7": "标题7",
+            "col_8": "标题8",
+            "col_9": "标题9",
+            "col_10": "标题10"
+          }
+        },
+        "row_d9VgKc": {
+          "type": "row",
+          "settings": {
+            "col_1": "Shared Table",
+            "col_1_link": "shopify://blogs/news",
+            "col_2": "Shared Table",
+            "col_2_link": "shopify://blogs/news",
+            "col_3": "Shared Table",
+            "col_3_link": "shopify://blogs/news",
+            "col_4": "",
+            "col_4_link": "",
+            "col_5": "",
+            "col_5_link": "",
+            "col_6": "",
+            "col_6_link": "",
+            "col_7": "",
+            "col_7_link": "",
+            "col_8": "",
+            "col_8_link": "",
+            "col_9": "",
+            "col_9_link": "",
+            "col_10": "",
+            "col_10_link": ""
+          }
+        },
+        "row_WGd6jC": {
+          "type": "row",
+          "settings": {
+            "col_1": "Shared Table",
+            "col_1_link": "",
+            "col_2": "Shared Table",
+            "col_2_link": "",
+            "col_3": "Shared Table",
+            "col_3_link": "",
+            "col_4": "",
+            "col_4_link": "",
+            "col_5": "",
+            "col_5_link": "",
+            "col_6": "",
+            "col_6_link": "",
+            "col_7": "",
+            "col_7_link": "",
+            "col_8": "",
+            "col_8_link": "",
+            "col_9": "",
+            "col_9_link": "",
+            "col_10": "",
+            "col_10_link": ""
+          }
+        },
+        "row_YH7dwD": {
+          "type": "row",
+          "settings": {
+            "col_1": "Shared Table",
+            "col_1_link": "",
+            "col_2": "Shared Table",
+            "col_2_link": "",
+            "col_3": "Shared Table",
+            "col_3_link": "",
+            "col_4": "",
+            "col_4_link": "",
+            "col_5": "",
+            "col_5_link": "",
+            "col_6": "",
+            "col_6_link": "",
+            "col_7": "",
+            "col_7_link": "",
+            "col_8": "",
+            "col_8_link": "",
+            "col_9": "",
+            "col_9_link": "",
+            "col_10": "",
+            "col_10_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "header_RGDrFq",
+        "row_d9VgKc",
+        "row_WGd6jC",
+        "row_YH7dwD"
+      ],
       "name": "表格区块",
       "settings": {
-        "table_content": "<p>Elevate your Events with Arrestingly Chic Shared Tables.</p>",
+        "columns": 3,
         "show_borders": true,
         "stripe_rows": true
+      }
+    },
+    "custom_title_DmB6PY": {
+      "type": "custom-title",
+      "name": "自定义标题",
+      "settings": {
+        "title": "Shared Moments",
+        "alignment": "center",
+        "color": "#000000",
+        "font_size": 24,
+        "margin_top": 20,
+        "margin_bottom": 20,
+        "font_weight": 700
       }
     },
     "custome_image_word_rMpVKK": {
@@ -239,7 +363,9 @@
   "order": [
     "main",
     "hero_8MEmGy",
-    "custom_table_list_6TFAVA",
+    "custom_title_H8ig48",
+    "custom_table_list_gXyXVz",
+    "custom_title_DmB6PY",
     "custome_image_word_rMpVKK",
     "custome_image_word_M9wEAw",
     "custom_title_xeC4CT",
