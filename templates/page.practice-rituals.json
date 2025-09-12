@@ -152,49 +152,56 @@
         "item_BBbfM3": {
           "type": "item",
           "settings": {
-            "title": "标题",
+            "image": "shopify://shop_images/a-woman-in-her-shop.jpg",
+            "title": "Ritual-3",
             "link": ""
           }
         },
         "item_Tq3AYC": {
           "type": "item",
           "settings": {
-            "title": "标题",
+            "image": "shopify://shop_images/person-sits-on-their-couch-next-to-their-dog.jpg",
+            "title": "Ritual-4",
             "link": ""
           }
         },
         "item_FWXpwt": {
           "type": "item",
           "settings": {
-            "title": "标题",
+            "image": "shopify://shop_images/stylish-woman-smiling.jpg",
+            "title": "Ritual-5",
             "link": ""
           }
         },
         "item_rPpWNr": {
           "type": "item",
           "settings": {
-            "title": "标题",
+            "image": "shopify://shop_images/person-enjoys-lunch-alone-in-a-sunlit-restaurant.jpg",
+            "title": "Ritual-6",
             "link": ""
           }
         },
         "item_qJXFCz": {
           "type": "item",
           "settings": {
-            "title": "标题",
+            "image": "shopify://shop_images/person-carries-a-wooden-box-full-of-dough-balls.jpg",
+            "title": "Ritual-7",
             "link": ""
           }
         },
         "item_pWKqr6": {
           "type": "item",
           "settings": {
-            "title": "标题",
+            "image": "shopify://shop_images/person-stands-on-rocks-poking-out-of-the-ocean-shoreline.jpg",
+            "title": "Ritual-8",
             "link": ""
           }
         },
         "item_wRhaW3": {
           "type": "item",
           "settings": {
-            "title": "标题",
+            "image": "shopify://shop_images/6D34FA22-F7E0-49A6-A0EC-5CF52C3DEA70_0c9a90f2-5131-4c9f-826c-244b3f341ae4.jpg",
+            "title": "Ritual-9",
             "link": ""
           }
         }
