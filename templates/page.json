@@ -295,8 +295,9 @@
           "type": "category",
           "settings": {
             "image": "shopify://shop_images/3214BB2A-1597-4A2C-A7CE-D694200EA870.jpg",
-            "title": "Pouches",
-            "link": ""
+            "title": "Herbal Pouches",
+            "link": "",
+            "description_text": "Anchors of scent and memory"
           }
         },
         "category_F9Ueyq": {
@@ -304,7 +305,8 @@
           "settings": {
             "image": "shopify://shop_images/6D34FA22-F7E0-49A6-A0EC-5CF52C3DEA70_0c9a90f2-5131-4c9f-826c-244b3f341ae4.jpg",
             "title": "Tea",
-            "link": ""
+            "link": "",
+            "description_text": "Infusions for pause and clarity"
           }
         },
         "category_YByhGg": {
@@ -312,7 +314,8 @@
           "settings": {
             "image": "shopify://shop_images/AA54D560-AA9E-41F9-85E7-523ADF83E32A.jpg",
             "title": "Objects",
-            "link": ""
+            "link": "",
+            "description_text": "Made with herbs, tea, and thoughtful craft."
           }
         },
         "category_9DN7Li": {
@@ -320,7 +323,8 @@
           "settings": {
             "image": "shopify://shop_images/514502E0-3C68-4574-9C89-25608D65BFE5.jpg",
             "title": "Journals",
-            "link": ""
+            "link": "",
+            "description_text": "Pages for what unfolds within"
           }
         }
       },

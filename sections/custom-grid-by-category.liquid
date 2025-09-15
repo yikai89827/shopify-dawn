@@ -51,7 +51,7 @@
           "type": "textarea",
           "id": "description_text",
           "label": "描述文本",
-          "default": "",
+          "default": "暂无描述",
           "info": "可选，输入后将在分类名称下方显示"
         }
       ]
@@ -139,6 +139,15 @@
     color: var(--color-button);
   }
 
+  .category-description {
+    padding: 10px 15px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #666;
+    text-align: center;
+    margin-top: 10px;
+  }
+
   @media screen and (max-width: 749px) {
     .category-grid {
       grid-template-columns: repeat(2, 1fr);
@@ -166,6 +175,11 @@
         {%- endif -%}
         <p class="category-title">{{ block.settings.title }}</p>
       </a>
+      {%- if block.settings.description_text != blank -%}
+        <div class="category-description">
+          {{ block.settings.description_text }}
+        </div>
+      {%- endif -%}
     </div>
   {%- endfor -%}
 </div>
